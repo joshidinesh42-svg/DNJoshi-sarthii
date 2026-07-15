@@ -1,0 +1,10 @@
+{
+  "name": "sarthii-travels",
+  "version": "1.0.0",
+  "description": "Sarthii Travels Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
