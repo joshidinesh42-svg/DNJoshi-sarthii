@@ -51,13 +51,13 @@ const server = http.createServer((req, res) => {
           fs.readFile(possibleHtmlFile, (htmlErr, htmlContent) => {
             if (!htmlErr) {
               res.writeHead(200, { 'Content-Type': 'text/html' });
-              res.end(htmlContent, 'utf-8');
+              res.end(htmlContent);
             } else {
               // Redirect/fallback to index.html
               fs.readFile(path.join(__dirname, 'index.html'), (indexErr, indexContent) => {
                 if (!indexErr) {
                   res.writeHead(200, { 'Content-Type': 'text/html' });
-                  res.end(indexContent, 'utf-8');
+                  res.end(indexContent);
                 } else {
                   res.writeHead(404, { 'Content-Type': 'text/plain' });
                   res.end('404 Not Found');
@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
       }
     } else {
       res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
+      res.end(content);
     }
   });
 });
