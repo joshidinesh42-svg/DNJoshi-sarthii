@@ -100,6 +100,19 @@
           </div>
           <a href="faqs.html">FAQs</a>
           <a href="contact.html">Contact Us</a>
+          
+          <!-- Mobile-only search and quick CTAs inside navigation drawer -->
+          <div class="mobile-only-search">
+            <div class="search-wrapper">
+              <input type="text" class="search-input" placeholder="Search for Himalayan tours..." aria-label="Search trips">
+              <i class="fas fa-search"></i>
+              <div class="search-suggestions"></div>
+            </div>
+          </div>
+          <div class="mobile-only-nav-actions">
+            <a href="https://wa.me/918171265958" class="banner-whatsapp-btn" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <a href="tel:+918171265958" class="banner-call-btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+          </div>
         </nav>
 
         <!-- Search Bar in Header -->
@@ -144,7 +157,7 @@
   <!-- ABOUT SECTION -->
   <section id="about" style="background-color: var(--white);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+      <div class="about-grid">
         <div>
           <img src="assets/adi-kailash.jpg" alt="Adi Kailash View" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
         </div>
@@ -153,7 +166,7 @@
           <h2 style="font-size: 2.2rem; margin: 10px 0 20px;">Your Trusted Companion in the Himalayas</h2>
           <p style="margin-bottom: 15px; color: var(--text-main);">Sarthii Travels is born out of a deep reverence for the sacred peaks of Kumaon region. We specialize in organized spiritual yatras and trekking expeditions to remote borders like <a href="adi-kailash.html" style="color: var(--primary); font-weight: 600;">Adi Kailash</a>, <a href="adi-kailash.html#itinerary-delhi" style="color: var(--primary); font-weight: 600;">Om Parvat</a>, and <a href="darma-valley.html" style="color: var(--primary); font-weight: 600;">Darma Valley</a>.</p>
           <p style="margin-bottom: 25px; color: var(--text-main);">With our verified local guides, reliable 4x4 transport fleet, arranged permits, and comfortable stays, we ensure a seamless and safe journey. True to our tagline—<b>Travel With Trust</b>—we prioritize your safety and spiritual comfort in high altitude conditions. <a href="about.html" style="color: var(--primary); font-weight: 700; text-decoration: none; border-bottom: 1.5px solid var(--primary); padding-bottom: 2px;">Read Our Full Story &rarr;</a></p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="about-features-grid">
             <div style="display: flex; gap: 10px;">
               <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.2rem; margin-top: 3px;"></i>
               <div>
@@ -359,7 +372,7 @@
           <form id="trip-planner-form">
             
             <!-- Full Name & Phone -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            <div class="form-row-grid">
               <div class="form-group" style="margin-bottom: 0;">
                 <label for="name" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Full Name *</label>
                 <div class="input-icon-wrapper">

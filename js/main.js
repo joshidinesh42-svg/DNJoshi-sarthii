@@ -55,69 +55,71 @@ const packages = [
 ];
 
 function initSearch() {
-  const searchInput = document.querySelector('.search-input');
+  const searchInputs = document.querySelectorAll('.search-input');
   
-  if (!searchInput) return;
+  if (searchInputs.length === 0) return;
 
-  // Create suggestions box dynamically if not present
-  let suggestionsBox = document.querySelector('.search-suggestions');
-  if (!suggestionsBox) {
-    suggestionsBox = document.createElement('div');
-    suggestionsBox.className = 'search-suggestions';
-    searchInput.parentNode.appendChild(suggestionsBox);
-  }
-
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    suggestionsBox.innerHTML = '';
-    
-    if (query.length < 1) {
-      suggestionsBox.style.display = 'none';
-      return;
+  searchInputs.forEach(searchInput => {
+    // Create suggestions box dynamically if not present
+    let suggestionsBox = searchInput.parentNode.querySelector('.search-suggestions');
+    if (!suggestionsBox) {
+      suggestionsBox = document.createElement('div');
+      suggestionsBox.className = 'search-suggestions';
+      searchInput.parentNode.appendChild(suggestionsBox);
     }
 
-    const filtered = packages.filter(pkg => 
-      pkg.name.toLowerCase().includes(query) || 
-      pkg.keywords.some(keyword => keyword.includes(query))
-    );
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      suggestionsBox.innerHTML = '';
+      
+      if (query.length < 1) {
+        suggestionsBox.style.display = 'none';
+        return;
+      }
 
-    if (filtered.length > 0) {
-      filtered.forEach(pkg => {
+      const filtered = packages.filter(pkg => 
+        pkg.name.toLowerCase().includes(query) || 
+        pkg.keywords.some(keyword => keyword.includes(query))
+      );
+
+      if (filtered.length > 0) {
+        filtered.forEach(pkg => {
+          const div = document.createElement('div');
+          div.className = 'suggestion-item';
+          div.textContent = pkg.name;
+          div.addEventListener('click', () => {
+            window.location.href = pkg.url;
+          });
+          suggestionsBox.appendChild(div);
+        });
+        suggestionsBox.style.display = 'block';
+      } else {
         const div = document.createElement('div');
         div.className = 'suggestion-item';
-        div.textContent = pkg.name;
-        div.addEventListener('click', () => {
-          window.location.href = pkg.url;
-        });
+        div.style.color = 'var(--text-muted)';
+        div.style.cursor = 'default';
+        div.textContent = 'No trips found...';
         suggestionsBox.appendChild(div);
-      });
-      suggestionsBox.style.display = 'block';
-    } else {
-      const div = document.createElement('div');
-      div.className = 'suggestion-item';
-      div.style.color = 'var(--text-muted)';
-      div.style.cursor = 'default';
-      div.textContent = 'No trips found...';
-      suggestionsBox.appendChild(div);
-      suggestionsBox.style.display = 'block';
-    }
-  });
-
-  // Close suggestions box on clicking outside
-  document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-      suggestionsBox.style.display = 'none';
-    }
-  });
-
-  // Add keydown navigation
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const items = suggestionsBox.querySelectorAll('.suggestion-item');
-      if (items.length > 0 && items[0].style.cursor !== 'default') {
-        items[0].click();
+        suggestionsBox.style.display = 'block';
       }
-    }
+    });
+
+    // Close suggestions box on clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = 'none';
+      }
+    });
+
+    // Add keydown navigation
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const items = suggestionsBox.querySelectorAll('.suggestion-item');
+        if (items.length > 0 && items[0].style.cursor !== 'default') {
+          items[0].click();
+        }
+      }
+    });
   });
 }
 
