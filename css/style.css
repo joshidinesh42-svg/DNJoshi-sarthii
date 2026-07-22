@@ -1000,6 +1000,63 @@ section {
   color: var(--white);
 }
 
+/* Destinations page destination cards */
+.dest-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.dest-card-grid.reversed {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.dest-card-img {
+  position: relative;
+  min-height: 300px;
+}
+
+.dest-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dest-card-body {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dest-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+}
+
+.dest-cta-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Inclusions/Exclusions grid */
+.incl-excl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 .trip-header-content {
   text-align: center;
 }
@@ -1031,6 +1088,82 @@ section {
 
 .trip-body {
   padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .trip-header-section {
+    padding: 90px 0 40px;
+  }
+
+  .trip-header-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .trip-header-meta {
+    gap: 10px;
+  }
+
+  .trip-header-meta span {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  .trip-body {
+    padding: 30px 0;
+  }
+
+  .dest-card-grid,
+  .dest-card-grid.reversed {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-card-grid.reversed .dest-card-body {
+    order: -1;
+  }
+
+  .dest-card-img {
+    min-height: 220px;
+  }
+
+  .dest-card-body {
+    padding: 25px 20px;
+  }
+
+  .dest-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .dest-cta-row {
+    flex-direction: column;
+  }
+
+  .dest-cta-row .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .incl-excl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .trip-header-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .dest-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .itinerary-tab-btn {
+    min-width: unset !important;
+    width: 100% !important;
+  }
 }
 
 .trip-grid {
