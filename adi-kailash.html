@@ -26,58 +26,100 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Structured Data / JSON-LD Product & Offer Schema -->
+  <!-- Structured Data / JSON-LD Product & TouristTrip Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Adi Kailash & Om Parvat Yatra",
-    "image": "http://localhost:8000/assets/adi-kailash.jpg",
-    "description": "Embark on a sacred journey into the heart of Kumaon's high-altitude borderlands to view Mt. Adi Kailash and Mt. Om Parvat. Pickup options from Delhi, Kathgodam, or Pithoragarh.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Sarthii Travels"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Adi Kailash & Om Parvat Yatra Package",
+      "image": "https://sarthiitravels.com/assets/adi-kailash.jpg",
+      "description": "Book the holy Adi Kailash & Om Parvat Yatra starting from Delhi, Kathgodam, or Pithoragarh. Gradual acclimatization, 4x4 Boleros, and permits included.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Sarthii Travels"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "16999",
+        "highPrice": "34999",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Pithoragarh to Pithoragarh Express Package",
+            "price": "16999",
+            "priceCurrency": "INR",
+            "url": "https://sarthiitravels.com/adi-kailash.html"
+          },
+          {
+            "@type": "Offer",
+            "name": "Kathgodam to Kathgodam Standard Package",
+            "price": "29999",
+            "priceCurrency": "INR",
+            "url": "https://sarthiitravels.com/adi-kailash.html"
+          },
+          {
+            "@type": "Offer",
+            "name": "Delhi to Delhi Premium Package",
+            "price": "34999",
+            "priceCurrency": "INR",
+            "url": "https://sarthiitravels.com/adi-kailash.html"
+          }
+        ]
+      }
     },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "16999",
-      "highPrice": "34999",
-      "offerCount": "3",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Pithoragarh to Pithoragarh Express Package",
-          "price": "16999",
-          "priceCurrency": "INR",
-          "eligibleQuantity": {
-            "@type": "QuantitativeValue",
-            "value": 1
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "Adi Kailash & Om Parvat Yatra",
+      "description": "Embark on a sacred journey into the heart of Kumaon's high-altitude borderlands to view Mt. Adi Kailash and Mt. Om Parvat.",
+      "image": "https://sarthiitravels.com/assets/adi-kailash.jpg",
+      "touristType": ["Pilgrims", "Spiritual Seekers", "Nature Lovers"],
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Sarthii Travels",
+        "url": "https://sarthiitravels.com"
+      },
+      "itinerary": {
+        "@type": "ItemList",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Day 1: Kathgodam to Pithoragarh"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Day 2: Pithoragarh to Dharchula & Gunji"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Day 3: Gunji to Jolingkong & Adi Kailash Darshan"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Day 4: Gunji to Nabidhang (Om Parvat Darshan) & descend to Pithoragarh"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Day 5: Pithoragarh Local Sightseeing & Rest"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Day 6: Pithoragarh to Kathgodam return"
           }
-        },
-        {
-          "@type": "Offer",
-          "name": "Kathgodam to Kathgodam Standard Package",
-          "price": "29999",
-          "priceCurrency": "INR",
-          "eligibleQuantity": {
-            "@type": "QuantitativeValue",
-            "value": 1
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Delhi to Delhi Premium Package",
-          "price": "34999",
-          "priceCurrency": "INR",
-          "eligibleQuantity": {
-            "@type": "QuantitativeValue",
-            "value": 1
-          }
-        }
-      ]
+        ]
+      }
     }
-  }
+  ]
   </script>
 </head>
 <body>

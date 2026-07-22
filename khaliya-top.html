@@ -26,26 +26,62 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Structured Data / JSON-LD Product & Offer Schema -->
+  <!-- Structured Data / JSON-LD Product & TouristTrip Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Khaliya Top Trek Munsiyari",
-    "image": "http://localhost:8000/assets/khaliya-top.jpg",
-    "description": "A scenic 3-day alpine meadow trek in Munsiyari, offering clear views of Panchachuli, Nanda Devi, and Hardeol peaks.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Sarthii Travels"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Khaliya Top Trek Munsiyari Package",
+      "image": "https://sarthiitravels.com/assets/khaliya-top.png",
+      "description": "Embark on the scenic 3-Day Khaliya Top alpine meadow trek in Munsiyari. Breathtaking views of Panchachuli and Nanda Devi peaks. Perfect for beginners.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Sarthii Travels"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "9500",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://sarthiitravels.com/khaliya-top.html"
+      }
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "9999",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "url": "http://localhost:8000/khaliya-top.html"
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "Khaliya Top Trek",
+      "description": "A scenic 3-day alpine meadow trek in Munsiyari, offering clear views of Panchachuli, Nanda Devi, and Hardeol peaks.",
+      "image": "https://sarthiitravels.com/assets/khaliya-top.png",
+      "touristType": ["Trekkers", "Beginners", "Nature Lovers"],
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Sarthii Travels",
+        "url": "https://sarthiitravels.com"
+      },
+      "itinerary": {
+        "@type": "ItemList",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Day 1: Kathgodam to Munsiyari"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Day 2: Munsiyari to Khaliya Top Meadow"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Day 3: Trek Down to Balati Bend & Drive to Kathgodam"
+          }
+        ]
+      }
     }
-  }
+  ]
   </script>
 </head>
 <body>

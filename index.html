@@ -27,48 +27,82 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Structured Data / JSON-LD TravelAgency Schema -->
+  <!-- Structured Data / JSON-LD TravelAgency & FAQPage Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Sarthii Travels",
-    "image": "http://localhost:8000/assets/logo.jpg",
-    "@id": "http://localhost:8000/#travelagency",
-    "url": "http://localhost:8000/index.html",
-    "telephone": "+91-8171265958",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Tanakpur Road, Aincholi, Near RN Flex",
-      "addressLocality": "Pithoragarh",
-      "addressRegion": "Uttarakhand",
-      "postalCode": "262501",
-      "addressCountry": "IN"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Sarthii Travels",
+      "image": "https://sarthiitravels.com/assets/logo.jpg",
+      "@id": "https://sarthiitravels.com/#travelagency",
+      "url": "https://sarthiitravels.com/index.html",
+      "telephone": "+918171265958",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tanakpur Road, Aincholi, Near RN Flex",
+        "addressLocality": "Pithoragarh",
+        "addressRegion": "Uttarakhand",
+        "postalCode": "262501",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "29.5768",
+        "longitude": "80.2184"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://wa.me/918171265958",
+        "https://www.facebook.com/share/1F1riiLHNz/",
+        "https://www.instagram.com/sarthitours?igsh=MzkwczE1bHYzOGg4"
+      ]
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "29.5768",
-      "longitude": "80.2184"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://wa.me/918171265958"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do we need permits for Adi Kailash & Om Parvat Yatra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, since the route borders Tibet/China, an Inner-Line Permit (ILP) issued by the SDM office, along with a police verification report and physical fitness certificate, is mandatory. Sarthii Travels completely manages this permit process for you as part of our package. You only need to submit your documents (Aadhaar, Passport Photo) 15 days in advance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time of year to visit Adi Kailash and Darma Valley?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best season is from late May to early July, and from September to mid-October. July and August bring heavy monsoon rains in the lower region (Dharchula area) which can trigger landslides, making travel risky. Winter temperatures drop below freezing, and heavy snow blocks the roads from November onwards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is high altitude sickness a concern, and how do we prepare?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Jolingkong (near Adi Kailash) is at 4,770m altitude, so mild altitude symptoms (headache, shortness of breath) are possible. We plan gradual acclimatization by staying at Dharchula and Gunji. We also carry portable oxygen cylinders and primary medication on all our trips. We recommend starting cardio exercises 3-4 weeks prior to your trip."
+          }
+        }
+      ]
+    }
+  ]
   </script>
 </head>
 <body>
