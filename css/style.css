@@ -843,10 +843,6 @@ section {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 40px;
-  }
 }
 
 .faq-sidebar {
@@ -1475,6 +1471,7 @@ footer {
   grid-template-columns: 2fr repeat(3, 1fr);
   gap: 40px;
   margin-bottom: 60px;
+  /* Responsive breakpoints handled below in media queries */
 }
 
 .footer-about .brand-name {
@@ -2085,6 +2082,14 @@ footer {
   }
 }
 
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
+    margin-bottom: 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -2133,7 +2138,8 @@ footer {
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 22px;
+    margin-bottom: 30px;
   }
 
   footer {
