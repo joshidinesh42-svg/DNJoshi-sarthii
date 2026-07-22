@@ -389,13 +389,43 @@
               </div>
             </div>
             
-            <!-- Date Selection -->
-            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 20px;">
+            <!-- Email & Expected Travel Date -->
+            <div class="form-row-grid">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="email" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Email Address *</label>
+                <div class="input-icon-wrapper">
+                  <input type="email" id="email" class="form-control" placeholder="E.g., rajesh@example.com" required>
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
               <div class="form-group" style="margin-bottom: 0;">
                 <label for="date" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Expected Travel Date *</label>
                 <div class="input-icon-wrapper">
                   <input type="date" id="date" class="form-control" required>
                   <i class="fas fa-calendar-alt"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Group Size & Contact Preference -->
+            <div class="form-row-grid">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="group-size" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Group Size *</label>
+                <div class="input-icon-wrapper">
+                  <input type="number" id="group-size" class="form-control" min="1" max="100" placeholder="E.g., 4" required>
+                  <i class="fas fa-users"></i>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="contact-pref" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px;">Preferred Contact Method *</label>
+                <div class="input-icon-wrapper">
+                  <select id="contact-pref" class="form-control" style="padding-left: 45px; background: var(--white); height: 48px; border: 1px solid var(--border); border-radius: var(--radius-sm); width: 100%; outline: none;" required>
+                    <option value="" disabled selected>Select method</option>
+                    <option value="phone">Phone Call</option>
+                    <option value="whatsapp">WhatsApp Message</option>
+                    <option value="email">Email</option>
+                  </select>
+                  <i class="fas fa-phone-alt"></i>
                 </div>
               </div>
             </div>
