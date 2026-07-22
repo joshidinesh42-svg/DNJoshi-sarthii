@@ -81,6 +81,18 @@ section {
   padding: 80px 0;
 }
 
+/* Mobile section padding reduction */
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -615,6 +627,8 @@ section {
   align-items: center;
   color: var(--white);
   overflow: hidden;
+  /* Push content below fixed navbar */
+  padding-top: var(--banner-height);
 }
 
 .hero::before {
@@ -1590,12 +1604,30 @@ footer {
   }
   
   /* Hero section adjustments */
+  .hero {
+    height: 75vh;
+    min-height: 420px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
   .hero-content h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
   
   .hero-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-tag {
+    font-size: 0.75rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
   
   /* Trip layout */
@@ -1606,6 +1638,43 @@ footer {
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
+
+  /* About text alignment */
+  .about-grid h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .about-features-grid {
+    text-align: left;
+  }
+
+  /* Section title scale */
+  .section-title h2 {
+    font-size: 1.9rem;
+  }
+
+  /* Package card price row */
+  .package-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Footer bottom stacking */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-bottom > div {
+    justify-content: center;
+  }
+
+  /* Body bottom padding for mobile CTA bar */
+  body {
+    padding-bottom: 64px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1614,12 +1683,39 @@ footer {
     gap: 15px;
   }
 
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero {
+    min-height: 380px;
+  }
+
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+    justify-content: center;
   }
   
   .trip-spec-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Reduce navbar logo tagline on very small screens */
+  .logo-link .logo-tagline {
+    display: none;
+  }
+
+  /* Planner section padding */
+  .planner-info-side,
+  .planner-form-side {
+    padding: 25px 20px;
   }
 }
 
@@ -1848,11 +1944,11 @@ footer {
   }
   
   .planner-info-side {
-    padding: 40px;
+    padding: 35px 30px;
   }
   
   .planner-form-side {
-    padding: 40px;
+    padding: 35px 30px;
   }
 }
 
@@ -1979,3 +2075,84 @@ body.nav-open {
   }
 }
 
+/* ============================================
+   MOBILE STICKY CTA BAR (bottom of screen)
+   ============================================ */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--white);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    height: 64px;
+  }
+
+  .mobile-cta-bar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    text-decoration: none;
+    border: none;
+  }
+
+  .mobile-cta-bar a i {
+    font-size: 1.3rem;
+    margin-bottom: 1px;
+  }
+
+  .mobile-cta-bar .cta-call {
+    color: var(--primary);
+    background-color: rgba(0, 128, 255, 0.04);
+  }
+
+  .mobile-cta-bar .cta-call:hover {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  .mobile-cta-bar .cta-whatsapp {
+    color: var(--white);
+    background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+    font-size: 0.75rem;
+  }
+
+  .mobile-cta-bar .cta-whatsapp i {
+    font-size: 1.5rem;
+  }
+
+  .mobile-cta-bar .cta-whatsapp:hover {
+    background: linear-gradient(135deg, #20ba5a 0%, #1aaa50 100%);
+  }
+
+  .mobile-cta-bar .cta-inquiry {
+    color: var(--secondary);
+    background-color: rgba(255, 140, 0, 0.04);
+  }
+
+  .mobile-cta-bar .cta-inquiry:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+
+  /* Divider between items */
+  .mobile-cta-bar a + a {
+    border-left: 1px solid var(--border);
+  }
+}
