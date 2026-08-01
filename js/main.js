@@ -508,12 +508,12 @@ function initDiscountPopup() {
   `;
   document.body.appendChild(popupOverlay);
 
-  // Trigger popup display with a 4-second delay
+  // Trigger popup display with a 6-second delay
   setTimeout(() => {
     if (!localStorage.getItem('sarthii_prebook_popup_dismissed')) {
       popupOverlay.classList.add('active');
     }
-  }, 4000);
+  }, 6000);
 
   // Close actions
   const closeBtn = popupOverlay.querySelector('.prebook-popup-close-btn');
