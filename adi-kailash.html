@@ -7,26 +7,25 @@
   <meta name="description" content="Book the holy Adi Kailash & Om Parvat Yatra starting from Delhi, Kathgodam, or Pithoragarh. Gradual acclimatization, 4x4 Boleros, and permits included.">
   <meta name="keywords" content="Adi Kailash Yatra package, Om Parvat tour cost, Jolingkong Temple, Vyas Valley pilgrimage, Pithoragarh to Adi Kailash, Delhi to Adi Kailash">
   <meta name="author" content="Sarthii Travels">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sarthiitravels.com/adi-kailash">
   <meta property="og:title" content="Adi Kailash & Om Parvat Yatra Tour Package - Sarthii Travels">
   <meta property="og:description" content="Book the holy Adi Kailash & Om Parvat Yatra starting from Delhi, Kathgodam, or Pithoragarh. Inclusions: permits, 4x4 Bolero, homestays.">
-  <meta property="og:image" content="http://localhost:8000/assets/adi-kailash.jpg">
+  <meta property="og:image" content="https://sarthiitravels.com/assets/adi-kailash.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Adi Kailash & Om Parvat Yatra - Sarthii Travels">
   <meta property="twitter:description" content="Embark on a sacred journey starting from ₹16,999. Safe and fully-managed group pilgrimage.">
-  <meta property="twitter:image" content="http://localhost:8000/assets/adi-kailash.jpg">
+  <meta property="twitter:image" content="https://sarthiitravels.com/assets/adi-kailash.jpg">
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=3">
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Structured Data / JSON-LD Product & TouristTrip Schema -->
+  <!-- Structured Data / JSON-LD -->
   <script type="application/ld+json">
   [
     {
@@ -35,100 +34,923 @@
       "name": "Adi Kailash & Om Parvat Yatra Package",
       "image": "https://sarthiitravels.com/assets/adi-kailash.jpg",
       "description": "Book the holy Adi Kailash & Om Parvat Yatra starting from Delhi, Kathgodam, or Pithoragarh. Gradual acclimatization, 4x4 Boleros, and permits included.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Sarthii Travels"
-      },
+      "brand": { "@type": "Brand", "name": "Sarthii Travels" },
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "INR",
         "lowPrice": "16999",
         "highPrice": "34999",
-        "offerCount": "3",
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Pithoragarh to Pithoragarh Express Package",
-            "price": "16999",
-            "priceCurrency": "INR",
-            "url": "https://sarthiitravels.com/adi-kailash"
-          },
-          {
-            "@type": "Offer",
-            "name": "Kathgodam to Kathgodam Standard Package",
-            "price": "29999",
-            "priceCurrency": "INR",
-            "url": "https://sarthiitravels.com/adi-kailash"
-          },
-          {
-            "@type": "Offer",
-            "name": "Delhi to Delhi Premium Package",
-            "price": "34999",
-            "priceCurrency": "INR",
-            "url": "https://sarthiitravels.com/adi-kailash"
-          }
-        ]
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristTrip",
-      "name": "Adi Kailash & Om Parvat Yatra",
-      "description": "Embark on a sacred journey into the heart of Kumaon's high-altitude borderlands to view Mt. Adi Kailash and Mt. Om Parvat.",
-      "image": "https://sarthiitravels.com/assets/adi-kailash.jpg",
-      "touristType": ["Pilgrims", "Spiritual Seekers", "Nature Lovers"],
-      "provider": {
-        "@type": "TravelAgency",
-        "name": "Sarthii Travels",
-        "url": "https://sarthiitravels.com"
-      },
-      "itinerary": {
-        "@type": "ItemList",
-        "numberOfItems": 6,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Day 1: Kathgodam to Pithoragarh"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Day 2: Pithoragarh to Dharchula & Gunji"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Day 3: Gunji to Jolingkong & Adi Kailash Darshan"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Day 4: Gunji to Nabidhang (Om Parvat Darshan) & descend to Pithoragarh"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Day 5: Pithoragarh Local Sightseeing & Rest"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Day 6: Pithoragarh to Kathgodam return"
-          }
-        ]
+        "offerCount": "3"
       }
     }
   ]
   </script>
+
+  <style>
+    /* ===== ADI KAILASH PAGE - PREMIUM REDESIGN ===== */
+
+    /* Hero Section */
+    .ak-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding-top: var(--banner-height);
+    }
+
+    .ak-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/adi-kailash.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease-out;
+    }
+
+    .ak-hero-bg.loaded { transform: scale(1); }
+
+    .ak-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 18, 40, 0.2) 0%,
+        rgba(10, 18, 40, 0.15) 30%,
+        rgba(10, 18, 40, 0.6) 65%,
+        rgba(10, 18, 40, 0.92) 100%
+      );
+    }
+
+    .ak-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 0 70px;
+    }
+
+    .ak-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 140, 0, 0.15);
+      border: 1px solid rgba(255, 140, 0, 0.45);
+      backdrop-filter: blur(8px);
+      color: #ffb347;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .ak-hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+
+    .ak-hero h1 span {
+      color: var(--secondary);
+    }
+
+    .ak-hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .ak-hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .ak-hero-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .ak-hero-pill i { color: var(--secondary); font-size: 0.85rem; }
+
+    .ak-hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ak-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--secondary), #e07b00);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .ak-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(255,140,0,0.5);
+    }
+
+    .ak-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .ak-btn-outline:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .scroll-indicator i { color: rgba(255,255,255,0.5); font-size: 1.1rem; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ===== PRICING STRIP ===== */
+    .ak-price-strip {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 0;
+    }
+
+    .ak-price-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ak-price-option {
+      padding: 28px 30px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .ak-price-option:last-child { border-right: none; }
+
+    .ak-price-option:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .ak-price-option.featured {
+      background: rgba(0, 128, 255, 0.1);
+      border-top: 3px solid var(--primary);
+    }
+
+    .ak-price-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+
+    .ak-price-option.featured .ak-price-label { color: var(--primary); }
+
+    .ak-price-route {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .ak-price-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .ak-price-duration {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .ak-price-amount {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .ak-price-pp {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+      display: block;
+      text-align: right;
+    }
+
+    /* ===== MAIN BODY ===== */
+    .ak-body {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .ak-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* ===== SECTION HEADINGS ===== */
+    .ak-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .ak-section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .ak-section-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .ak-section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    /* ===== QUICK STATS BAR ===== */
+    .ak-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .ak-stat-item {
+      padding: 22px 20px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+    }
+
+    .ak-stat-item:last-child { border-right: none; }
+
+    .ak-stat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, rgba(0,128,255,0.1), rgba(0,128,255,0.05));
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .ak-stat-value {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .ak-stat-key {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .ak-about-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 36px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .ak-about-card p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .ak-about-card p:last-child { margin-bottom: 0; }
+
+    .ak-about-card p strong { color: var(--dark); font-weight: 700; }
+
+    .ak-about-card a {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .ak-about-card a:hover { border-color: var(--primary); }
+
+    /* ===== HIGHLIGHTS GRID ===== */
+    .ak-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .ak-highlight-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ak-highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .ak-highlight-card:hover::before { transform: scaleX(1); }
+    .ak-highlight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    .ak-highlight-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, rgba(0,128,255,0.1), rgba(0,128,255,0.05));
+      color: var(--primary);
+    }
+
+    .ak-highlight-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .ak-highlight-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== ITINERARY ===== */
+    .ak-itinerary-section {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ak-itinerary-header {
+      padding: 30px 36px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Itinerary Tabs - redesigned */
+    .ak-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 36px;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .ak-tab-btn {
+      padding: 12px 10px;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: var(--light);
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1.5px solid transparent;
+      text-align: center;
+    }
+
+    .ak-tab-btn:hover { background: rgba(0,128,255,0.07); color: var(--primary); }
+
+    .ak-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary), #0066cc);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0,128,255,0.3);
+    }
+
+    .ak-tab-btn .tab-days {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-top: 2px;
+      opacity: 0.75;
+    }
+
+    /* Timeline */
+    .ak-timeline-wrap {
+      padding: 30px 36px 36px;
+    }
+
+    .ak-timeline { position: relative; }
+
+    .ak-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .ak-day {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .ak-day:last-child { margin-bottom: 0; }
+
+    .ak-day-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #0066cc);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--primary), var(--shadow-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ak-day-content {
+      padding-top: 8px;
+      flex: 1;
+    }
+
+    .ak-day-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .ak-day-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== INCLUSIONS / EXCLUSIONS ===== */
+    .ak-incl-excl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .ak-incl-card, .ak-excl-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .ak-incl-card { border-top: 3px solid #22c55e; }
+    .ak-excl-card { border-top: 3px solid #ef4444; }
+
+    .ak-incl-card h3, .ak-excl-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ak-incl-card h3 .icon-dot { color: #22c55e; }
+    .ak-excl-card h3 .icon-dot { color: #ef4444; }
+
+    .ak-incl-excl-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .ak-incl-excl-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .ak-incl-excl-list li::before {
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 0.7rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ak-incl-excl-list.inclusions li::before {
+      content: '\f00c';
+      background: rgba(34,197,94,0.1);
+      color: #22c55e;
+    }
+
+    .ak-incl-excl-list.exclusions li::before {
+      content: '\f00d';
+      background: rgba(239,68,68,0.1);
+      color: #ef4444;
+    }
+
+    .ak-incl-excl-list li a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .ak-incl-excl-list li a:hover { text-decoration-color: var(--primary); }
+
+    /* ===== SIDEBAR ===== */
+    .ak-sidebar {
+      position: sticky;
+      top: calc(var(--banner-height) + 20px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Pricing Card */
+    .ak-price-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .ak-price-card-header {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 24px 28px;
+    }
+
+    .ak-price-card-header h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .ak-price-card-header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+    }
+
+    .ak-price-options {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ak-price-opt {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .ak-price-opt:hover {
+      border-color: var(--primary);
+      background: rgba(0,128,255,0.03);
+    }
+
+    .ak-price-opt.selected {
+      border-color: var(--primary);
+      background: rgba(0,128,255,0.06);
+    }
+
+    .ak-price-opt-info { flex: 1; }
+
+    .ak-price-opt-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .ak-price-opt-dur {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .ak-price-opt-amt {
+      text-align: right;
+    }
+
+    .ak-price-opt-amt .amount {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    .ak-price-opt-amt .pp {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    /* Inquiry Form Card */
+    .ak-inquiry-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .ak-inquiry-card-header {
+      background: linear-gradient(135deg, var(--primary), #0066cc);
+      padding: 22px 28px;
+    }
+
+    .ak-inquiry-card-header h4 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .ak-inquiry-card-header p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+    }
+
+    .ak-inquiry-form {
+      padding: 24px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ak-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .ak-form-group label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 0.3px;
+    }
+
+    .ak-form-group input,
+    .ak-form-group select,
+    .ak-form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--dark);
+      background: var(--light);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .ak-form-group input:focus,
+    .ak-form-group select:focus,
+    .ak-form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,128,255,0.1);
+      background: #fff;
+    }
+
+    .ak-form-group textarea { resize: vertical; min-height: 70px; }
+
+    .ak-submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--secondary), #e07b00);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(255,140,0,0.3);
+    }
+
+    .ak-submit-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(255,140,0,0.4);
+    }
+
+    /* Trust signals */
+    .ak-trust-bar {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ak-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .ak-trust-item i {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      background: rgba(34,197,94,0.1);
+      color: #22c55e;
+    }
+
+    .ak-trust-item span { line-height: 1.4; font-weight: 500; }
+    .ak-trust-item strong { color: var(--dark); font-weight: 700; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .ak-layout { grid-template-columns: 1fr; }
+      .ak-sidebar { position: static; }
+      .ak-price-strip-inner { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .ak-hero { min-height: 90vh; }
+      .ak-hero h1 { font-size: 2rem; }
+      .ak-hero-subtitle { font-size: 0.95rem; }
+      .ak-price-strip-inner { grid-template-columns: 1fr; }
+      .ak-price-option { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .ak-stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .ak-stat-item:nth-child(2n) { border-right: none; }
+      .ak-stat-item:nth-child(3), .ak-stat-item:nth-child(4) { border-top: 1px solid var(--border); }
+      .ak-highlights { grid-template-columns: 1fr; }
+      .ak-tabs { grid-template-columns: 1fr; }
+      .ak-incl-excl { grid-template-columns: 1fr; }
+      .ak-itinerary-header,
+      .ak-timeline-wrap,
+      .ak-tabs { padding-left: 20px; padding-right: 20px; }
+      .ak-about-card { padding: 24px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 1. FLOATING TOP BANNER (Sticky Navbar) -->
+  <!-- 1. STICKY NAVBAR -->
   <header class="floating-top-banner">
     <div class="container">
       <div class="banner-content">
-        <!-- Brand Name Small / Logo -->
         <a href="/" class="logo-link">
           <img src="assets/logo.jpg" alt="Sarthii Travels Logo" style="height: 38px; width: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border);">
           <div style="display: flex; flex-direction: column; line-height: 1.1;">
@@ -149,7 +971,6 @@
           </div>
           <a href="faqs">FAQs</a>
           <a href="contact">Contact Us</a>
-          <!-- Mobile-only search and CTAs -->
           <div class="mobile-only-search">
             <div class="search-wrapper">
               <input type="text" class="search-input" placeholder="Search for Himalayan tours..." aria-label="Search trips">
@@ -162,8 +983,6 @@
             <a href="tel:+918171265958" class="banner-call-btn"><i class="fas fa-phone-alt"></i> Call Now</a>
           </div>
         </nav>
-
-        <!-- Search Bar in Header -->
         <div class="header-search-wrapper">
           <div class="search-wrapper">
             <input type="text" class="search-input" placeholder="Search for Himalayan tours..." aria-label="Search trips">
@@ -171,257 +990,333 @@
             <div class="search-suggestions"></div>
           </div>
         </div>
-
         <div class="banner-actions">
           <a href="https://wa.me/918171265958" class="banner-whatsapp-btn" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
           <a href="tel:+918171265958" class="banner-call-btn"><i class="fas fa-phone-alt"></i> <span>Call Now</span></a>
         </div>
         <button class="menu-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
 
+  <!-- 2. HERO SECTION -->
+  <section class="ak-hero" id="ak-hero-top">
+    <div class="ak-hero-bg" id="ak-hero-bg"></div>
+    <div class="ak-hero-overlay"></div>
 
-  <!-- TRIP DETAIL HEADER -->
-  <section class="trip-header-section" style="background-image: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.75)), url('assets/adi-kailash.jpg');">
-    <div class="container">
-      <div class="trip-header-content">
-        <h1>Adi Kailash & Om Parvat Yatra</h1>
-        <div class="trip-header-meta">
-          <span><i class="far fa-clock"></i> 3 - 6 Days</span>
-          <span><i class="fas fa-mountain"></i> Max Altitude: 4,770m</span>
-          <span><i class="fas fa-map-marker-alt"></i> Pickups: Delhi / Kathgodam / Pithoragarh</span>
+    <div class="ak-hero-content">
+      <div class="container">
+        <div class="ak-hero-badge">
+          <i class="fas fa-om"></i>
+          Sacred Pilgrimage · Uttarakhand
+        </div>
+
+        <h1>Adi Kailash &amp; <span>Om Parvat</span><br>Yatra</h1>
+
+        <p class="ak-hero-subtitle">
+          Journey to the mystical borderlands of Kumaon, where the snow on Om Parvat spells the sacred symbol <strong style="color: #ffb347;">ॐ</strong>, and Adi Kailash rises above the clouds in eternal silence.
+        </p>
+
+        <div class="ak-hero-pills">
+          <div class="ak-hero-pill"><i class="far fa-clock"></i> 3–6 Days</div>
+          <div class="ak-hero-pill"><i class="fas fa-mountain"></i> 4,770m Max Altitude</div>
+          <div class="ak-hero-pill"><i class="fas fa-map-marker-alt"></i> Delhi / Kathgodam / Pithoragarh</div>
+          <div class="ak-hero-pill"><i class="fas fa-rupee-sign"></i> From ₹16,999 / person</div>
+        </div>
+
+        <div class="ak-hero-cta">
+          <a href="#inquiry-box" class="ak-btn-primary">
+            <i class="fas fa-paper-plane"></i> Enquire Now
+          </a>
+          <a href="https://wa.me/918171265958?text=Hi%2C%20I%20am%20interested%20in%20the%20Adi%20Kailash%20%26%20Om%20Parvat%20Yatra%20package." class="ak-btn-outline" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
         </div>
       </div>
     </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('ak-body').scrollIntoView({behavior:'smooth'})">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </section>
 
-  <!-- TRIP BODY -->
-  <section class="trip-body">
+
+  <!-- 3. PRICING STRIP -->
+  <div class="ak-price-strip">
+    <div class="ak-price-strip-inner">
+      <div class="ak-price-option">
+        <div class="ak-price-label">Option 1</div>
+        <div class="ak-price-route">Pithoragarh → Pithoragarh</div>
+        <div class="ak-price-meta">
+          <span class="ak-price-duration"><i class="far fa-clock" style="margin-right:5px;"></i>3 Days / 2 Nights</span>
+          <div>
+            <div class="ak-price-amount">₹16,999</div>
+            <span class="ak-price-pp">per person</span>
+          </div>
+        </div>
+      </div>
+      <div class="ak-price-option featured">
+        <div class="ak-price-label">⭐ Most Popular</div>
+        <div class="ak-price-route">Kathgodam → Kathgodam</div>
+        <div class="ak-price-meta">
+          <span class="ak-price-duration"><i class="far fa-clock" style="margin-right:5px;"></i>6 Days / 5 Nights</span>
+          <div>
+            <div class="ak-price-amount">₹29,999</div>
+            <span class="ak-price-pp">per person</span>
+          </div>
+        </div>
+      </div>
+      <div class="ak-price-option">
+        <div class="ak-price-label">Option 3 – Premium</div>
+        <div class="ak-price-route">Delhi → Delhi</div>
+        <div class="ak-price-meta">
+          <span class="ak-price-duration"><i class="far fa-clock" style="margin-right:5px;"></i>6 Days / 5 Nights</span>
+          <div>
+            <div class="ak-price-amount">₹34,999</div>
+            <span class="ak-price-pp">per person</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4. MAIN BODY -->
+  <section class="ak-body" id="ak-body">
     <div class="container">
-      <div class="trip-grid">
-        
-        <!-- Left Side: Trip Details -->
+      <div class="ak-layout">
+
+        <!-- LEFT: Main Content -->
         <div>
-          <!-- Spec Highlights -->
-          <div class="trip-info-card">
-            <h3>Quick Trip Overview</h3>
-            <div class="trip-spec-grid">
-              <div class="trip-spec-item">
-                <i class="fas fa-calendar-alt"></i>
-                <div>
-                  <h5>Best Season</h5>
-                  <p>May - June & Sept - Oct</p>
-                </div>
-              </div>
-              <div class="trip-spec-item">
-                <i class="fas fa-route"></i>
-                <div>
-                  <h5>Route Pathway</h5>
-                  <p>Kathgodam - Dharchula - Gunji - Jolingkong - Nabidhang</p>
-                </div>
-              </div>
-              <div class="trip-spec-item">
-                <i class="fas fa-tachometer-alt"></i>
-                <div>
-                  <h5>Difficulty Level</h5>
-                  <p>Moderate to Strenuous</p>
-                </div>
-              </div>
-              <div class="trip-spec-item">
-                <i class="fas fa-user-friends"></i>
-                <div>
-                  <h5>Ideal Group Size</h5>
-                  <p>4 to 12 persons</p>
-                </div>
-              </div>
+
+          <!-- Quick Stats -->
+          <div class="ak-stats-bar">
+            <div class="ak-stat-item">
+              <div class="ak-stat-icon"><i class="fas fa-mountain"></i></div>
+              <div class="ak-stat-value">4,770 m</div>
+              <div class="ak-stat-key">Max Altitude</div>
+            </div>
+            <div class="ak-stat-item">
+              <div class="ak-stat-icon"><i class="fas fa-calendar-check"></i></div>
+              <div class="ak-stat-value">May–Oct</div>
+              <div class="ak-stat-key">Best Season</div>
+            </div>
+            <div class="ak-stat-item">
+              <div class="ak-stat-icon"><i class="fas fa-tachometer-alt"></i></div>
+              <div class="ak-stat-value">Moderate</div>
+              <div class="ak-stat-key">Difficulty</div>
+            </div>
+            <div class="ak-stat-item">
+              <div class="ak-stat-icon"><i class="fas fa-user-friends"></i></div>
+              <div class="ak-stat-value">4–12</div>
+              <div class="ak-stat-key">Group Size</div>
             </div>
           </div>
 
-          <!-- Description -->
-          <div class="trip-info-card">
-            <h3>About the Sacred Journey</h3>
-            <p style="margin-bottom: 15px;">The **Adi Kailash and Om Parvat Yatra** is one of the most revered and spiritually enriching pilgrimages in India. Tucked away in the Vyas Valley of Uttarakhand bordering Tibet, it offers devotees a chance to witness majestic peaks steeped in mythology.</p>
-            <p style="margin-bottom: 15px;">**Adi Kailash** (often called Chota Kailash) stands at 4,770 meters. Close to its foot lies the beautiful **Jolingkong Lake** and the ancient temple dedicated to Lord Shiva and Goddess Parvati. Nearby, **Om Parvat** is a mystical natural wonder where the white snow deposits itself perfectly onto the dark rock ridges to spell the sacred symbol **"ॐ"**.</p>
-            <p>During this trip, you will travel through the scenic border towns along the gushing Kali River, experience Kumaoni hospitality in local homestays in Gunji and Kutti, and undergo a truly transformative spiritual awakening. (If you wish to explore more of Uttarakhand, check out our rugged <a href="darma-valley" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Darma Valley Expedition</a>, or the alpine meadows of <a href="khaliya-top" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Khaliya Top Trek</a> in Munsiyari).</p>
+          <!-- About -->
+          <div class="ak-about-card">
+            <div class="ak-section-label"><i class="fas fa-info-circle"></i> About the Yatra</div>
+            <h2 class="ak-section-title">A Pilgrimage Like No Other</h2>
+            <p>The <strong>Adi Kailash and Om Parvat Yatra</strong> is one of the most revered spiritual pilgrimages in India. Nestled in the Vyas Valley of Uttarakhand along the Tibetan border, it offers devotees and adventurers alike a chance to witness majestic peaks steeped in ancient mythology and divine energy.</p>
+            <p><strong>Adi Kailash</strong> (also called Chota Kailash) stands at 4,770 meters, with the sacred <strong>Jolingkong Lake</strong> and a temple dedicated to Lord Shiva and Goddess Parvati at its base. Close by, <strong>Om Parvat</strong> is a natural miracle — the snow deposits itself perfectly onto dark granite ridges to spell the sacred symbol <strong>ॐ</strong>.</p>
+            <p>Travel through border towns along the gushing Kali River, experience warm Kumaoni hospitality in Gunji homestays, and undergo a transformative spiritual awakening. Not interested in a spiritual journey? Try our rugged <a href="darma-valley">Darma Valley Expedition</a> or the alpine <a href="khaliya-top">Khaliya Top Trek</a>.</p>
+          </div>
+
+          <!-- Highlights Grid -->
+          <div style="margin-bottom: 30px;">
+            <div class="ak-section-label"><i class="fas fa-star"></i> Why Choose Us</div>
+            <h2 class="ak-section-title">What Makes Our Yatra Special</h2>
+          </div>
+          <div class="ak-highlights">
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-id-card"></i></div>
+              <h4>Permits Handled</h4>
+              <p>Inner-Line Permit and all government fees arranged by our team — completely hassle-free.</p>
+            </div>
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-truck-monster"></i></div>
+              <h4>4×4 Bolero Fleet</h4>
+              <p>High-clearance, purpose-built mountain vehicles for the rugged Vyas Valley terrain.</p>
+            </div>
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-home"></i></div>
+              <h4>Local Homestays</h4>
+              <p>Authentic Kumaoni homestays in Gunji &amp; Kutti with warm meals and genuine hospitality.</p>
+            </div>
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-first-aid"></i></div>
+              <h4>Full Safety Kit</h4>
+              <p>Oxygen cylinders, BP monitors, and first-aid kits carried throughout the journey.</p>
+            </div>
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-utensils"></i></div>
+              <h4>Veg Meals Included</h4>
+              <p>Healthy vegetarian breakfast, lunch, and dinner throughout the entire tour.</p>
+            </div>
+            <div class="ak-highlight-card">
+              <div class="ak-highlight-icon"><i class="fas fa-user-shield"></i></div>
+              <h4>Expert Guide</h4>
+              <p>Certified local guides with deep knowledge of the routes, culture, and safety protocols.</p>
+            </div>
           </div>
 
           <!-- Itinerary -->
-          <div class="trip-info-card">
-            <h3>Day-by-Day Detailed Itinerary</h3>
-            
-            <!-- Itinerary Switch Tabs -->
-            <div class="itinerary-tabs" style="display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
-              <button class="itinerary-tab-btn" data-target="delhi" style="flex: 1; min-width: 140px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: var(--transition); background-color: var(--light); color: var(--text-main);">
-                Delhi to Delhi (6D/5N)
-              </button>
-              <button class="itinerary-tab-btn active" data-target="kathgodam" style="flex: 1; min-width: 140px; padding: 12px; border: 1px solid var(--primary); border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: var(--transition); background-color: var(--primary); color: var(--white); box-shadow: 0 4px 10px rgba(0, 128, 255, 0.15);">
-                Kathgodam to Kathgodam (6D/5N)
-              </button>
-              <button class="itinerary-tab-btn" data-target="pithoragarh" style="flex: 1; min-width: 140px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: var(--transition); background-color: var(--light); color: var(--text-main);">
-                Pithoragarh to Pithoragarh (3D/2N)
-              </button>
+          <div class="ak-itinerary-section" id="itinerary-section">
+            <div class="ak-itinerary-header">
+              <div class="ak-section-label"><i class="fas fa-route"></i> Day-by-Day Plan</div>
+              <h2 class="ak-section-title">Detailed Itinerary</h2>
+              <p class="ak-section-desc" style="margin-bottom: 0;">Choose your preferred pickup point to see the full itinerary.</p>
+              <div class="ak-tabs" id="ak-tabs">
+                <button class="ak-tab-btn" data-target="itinerary-delhi">Delhi to Delhi<span class="tab-days">6 Days / 5 Nights</span></button>
+                <button class="ak-tab-btn active" data-target="itinerary-kathgodam">Kathgodam to Kathgodam<span class="tab-days">6 Days / 5 Nights</span></button>
+                <button class="ak-tab-btn" data-target="itinerary-pithoragarh">Pithoragarh to Pithoragarh<span class="tab-days">3 Days / 2 Nights</span></button>
+              </div>
             </div>
 
-            <!-- 1. Delhi to Delhi Timeline -->
-            <div class="itinerary-timeline" id="itinerary-delhi" style="display: none;">
-              
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 1</span>
-                  <h4>Delhi to Pithoragarh (Drive: 460 km / 12-13 hrs)</h4>
+            <div class="ak-timeline-wrap">
+
+              <!-- Delhi Itinerary -->
+              <div class="ak-timeline" id="itinerary-delhi" style="display:none;">
+                <div class="ak-day">
+                  <div class="ak-day-badge">D1</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Delhi to Pithoragarh <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(Drive: 460 km / 12–13 hrs)</span></h4>
+                    <p class="ak-day-desc">Start early from Delhi. Drive via Haldwani and Kathgodam to reach Pithoragarh, the Mini Kashmir of Uttarakhand. Check into your hotel for dinner and rest after the long journey. Overnight stay in Pithoragarh.</p>
+                  </div>
                 </div>
-                <p class="itinerary-desc">Start early morning from Delhi. Drive via Haldwani and Kathgodam to reach Pithoragarh, the Mini Kashmir of Uttarakhand. Check into your hotel for dinner and rest after the long journey. Overnight stay in Pithoragarh.</p>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D2</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh → Dharchula → Gunji <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(95 km + 80 km / 7–8 hrs)</span></h4>
+                    <p class="ak-day-desc">Drive to Dharchula in the morning. Complete permit clearings and border checks. Board the local 4×4 Boleros and climb through scenic gorges and waterfalls into the high-altitude Vyas Valley. Reach Gunji (3,200m). Overnight stay in homestays.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D3</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Gunji → Jolingkong — Adi Kailash Darshan <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(35 km / 2 hrs)</span></h4>
+                    <p class="ak-day-desc">Early morning drive to Jolingkong (4,570m). Breathtaking close-up view of Adi Kailash peak, Parvati Kund, and the Shiva Temple. Offer prayers, take a holy touch of the sacred water, and drive back to Gunji for overnight stay.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D4</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Gunji → Nabidhang (Om Parvat) → Pithoragarh <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(9–10 hrs)</span></h4>
+                    <p class="ak-day-desc">Start early to Nabidhang (4,250m) to witness the sacred Om Parvat. After Darshan, return to Gunji for lunch. Descend the Vyas Valley to Dharchula in 4×4 Boleros, then transfer to road vehicles and drive to Pithoragarh. Overnight stay.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D5</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh Local Sightseeing &amp; Rest</h4>
+                    <p class="ak-day-desc">Explore the beautiful town of Pithoragarh — visit the historic Fort built by Chand kings, the sacred Mostamanu Temple on its scenic ridge, and Chandak Hill with panoramic valley views. Rest and prepare for the return. Overnight in Pithoragarh.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D6</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh to Delhi <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(460 km / 12–13 hrs)</span></h4>
+                    <p class="ak-day-desc">Drive back to Delhi through Champawat, Haldwani, and Kathgodam. Reach Delhi by late evening. Tour concludes with sacred blessings and lifelong memories.</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 2</span>
-                  <h4>Pithoragarh to Dharchula & Drive to Gunji/Napalchu (Drive: 95 km + 80 km / 7-8 hrs)</h4>
+              <!-- Kathgodam Itinerary (Default) -->
+              <div class="ak-timeline" id="itinerary-kathgodam" style="display:block;">
+                <div class="ak-day">
+                  <div class="ak-day-badge">D1</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Kathgodam to Pithoragarh <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(185 km / 6–7 hrs)</span></h4>
+                    <p class="ak-day-desc">Start from Kathgodam railway station. Drive through winding scenic hills passing Bhimtal, Champawat, and Lohaghat. Arrive in the beautiful valley of Pithoragarh. Check into your hotel for dinner and rest. Overnight in Pithoragarh.</p>
+                  </div>
                 </div>
-                <p class="itinerary-desc">Drive to Dharchula in the morning. Complete permit clearings and border checks. Board the local 4x4 Boleros to climb through scenic gorges and waterfalls into the high-altitude Vyas Valley. Reach Gunji (3,200m). Overnight stay in homestays.</p>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D2</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh → Dharchula → Gunji <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(95 km + 80 km / 7–8 hrs)</span></h4>
+                    <p class="ak-day-desc">Drive from Pithoragarh to Dharchula in the morning. Complete permit clearings and border checks at the checkposts. Board the local 4×4 Boleros and climb through scenic rocky gorges and waterfalls into Vyas Valley. Reach Gunji (3,200m) for acclimatization. Overnight in traditional homestays.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D3</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Gunji → Jolingkong — Adi Kailash Darshan <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(35 km / 2 hrs)</span></h4>
+                    <p class="ak-day-desc">Early morning drive to Jolingkong (4,570m). Behold the breathtaking close-up view of Mount Adi Kailash. Visit the sacred Parvati Kund and the Shiva Temple at its banks. Meditate and absorb the divine energy. Drive back to Gunji for overnight stay.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D4</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Gunji → Nabidhang (Om Parvat) → Pithoragarh <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(9–10 hrs)</span></h4>
+                    <p class="ak-day-desc">Start early and drive to Nabidhang (4,250m) to witness holy Om Parvat. After Darshan and prayers at the Om Temple, return to Gunji for lunch. Board 4×4 Boleros to descend to Dharchula, then drive to Pithoragarh for a well-deserved rest. Overnight in Pithoragarh.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D5</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh Local Sightseeing &amp; Rest</h4>
+                    <p class="ak-day-desc">Explore the beautiful town of Pithoragarh. Visit Pithoragarh Fort, the Mostamanu Temple on a scenic ridge, and Chandak Hill for panoramic views. Spend the evening shopping for local Kumaoni woolens and handicrafts. Overnight in Pithoragarh.</p>
+                  </div>
+                </div>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D6</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh to Kathgodam <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(185 km / 6–7 hrs)</span></h4>
+                    <p class="ak-day-desc">Drive back to Kathgodam through scenic routes via Champawat and Lohaghat. Drop-off at Kathgodam railway station by late evening, concluding your sacred Yatra with beautiful memories.</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 3</span>
-                  <h4>Gunji to Jolingkong & Adi Kailash Darshan (Drive: 35 km / 2 hrs)</h4>
+              <!-- Pithoragarh Itinerary -->
+              <div class="ak-timeline" id="itinerary-pithoragarh" style="display:none;">
+                <div class="ak-day">
+                  <div class="ak-day-badge">D1</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Pithoragarh → Dharchula → Gunji <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(175 km / 7–8 hrs)</span></h4>
+                    <p class="ak-day-desc">Start early from Pithoragarh. Reach Dharchula, complete permit clearings and border checks. Transfer to local 4×4 vehicles and climb directly to Gunji (3,200m) in Vyas Valley. Acclimatize and overnight stay in Gunji.</p>
+                  </div>
                 </div>
-                <p class="itinerary-desc">Early morning drive towards Jolingkong (4,570m). Breathtaking close-up view of Adi Kailash peak, Parvati Kund, and Shiva Temple. Offer prayers, take a holy touch of water, and drive back to Gunji for overnight stay.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 4</span>
-                  <h4>Gunji to Nabidhang (Om Parvat Darshan) & Drive to Pithoragarh (Drive: 102 km 4x4 + 95 km road / 9-10 hrs)</h4>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D2</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Gunji → Adi Kailash + Om Parvat → Dharchula <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(140 km / 9–10 hrs)</span></h4>
+                    <p class="ak-day-desc">A full day. Early morning drive to Jolingkong for Adi Kailash Darshan, then proceed to Nabidhang for Om Parvat Darshan. Return to Gunji and board 4×4 vehicles to descend to Dharchula for overnight stay.</p>
+                  </div>
                 </div>
-                <p class="itinerary-desc">Start early to Nabidhang (4,250m) to witness Om Parvat. After Darshan, return to Gunji for a quick lunch. Descend down the Vyas Valley to Dharchula in 4x4 Boleros, and then transfer to your road vehicles to drive directly to Pithoragarh. Reach your hotel in Pithoragarh by late evening for a relaxing overnight stay.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 5</span>
-                  <h4>Pithoragarh Local Sightseeing & Rest</h4>
+                <div class="ak-day">
+                  <div class="ak-day-badge">D3</div>
+                  <div class="ak-day-content">
+                    <h4 class="ak-day-title">Dharchula to Pithoragarh <span style="font-weight:500; color:var(--text-muted); font-size:0.85rem;">(95 km / 4 hrs)</span></h4>
+                    <p class="ak-day-desc">Relaxed morning in Dharchula. Drive back to Pithoragarh. Drop-off by afternoon, concluding your Express Yatra with sacred blessings.</p>
+                  </div>
                 </div>
-                <p class="itinerary-desc">Spend the day at leisure in the beautiful town of Pithoragarh. Explore local sights like the historic Pithoragarh Fort built by Chand kings, the sacred Mostamanu Temple on a high ridge, and the serene Chandak Hill with its panoramic valley views. Rest and prepare for the return drive tomorrow. Overnight stay in Pithoragarh.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 6</span>
-                  <h4>Pithoragarh to Delhi (Drive: 460 km / 12-13 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Drive back to Delhi through Champawat, Haldwani, and Kathgodam. Reach Delhi by late evening. Tour concludes with sacred blessings and memories.</p>
-              </div>
-
-            </div>
-
-            <!-- 2. Kathgodam to Kathgodam Timeline (Default) -->
-            <div class="itinerary-timeline" id="itinerary-kathgodam">
-              
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 1</span>
-                  <h4>Kathgodam to Pithoragarh (Drive: 185 km / 6-7 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Start from Kathgodam railway station/bus stand. Drive through the winding scenic hill roads passing Bhimtal, Champawat, and Lohaghat. Arrive in the beautiful valley of Pithoragarh, the Mini Kashmir of Kumaon. Check into your hotel for dinner and rest. Overnight stay in Pithoragarh.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 2</span>
-                  <h4>Pithoragarh to Dharchula & Drive to Gunji/Napalchu (Drive: 95 km + 80 km / 7-8 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Drive from Pithoragarh to Dharchula in the morning. Complete permit clearings and border checks at the checkposts. Board the local 4x4 Boleros to climb through scenic rocky gorges and waterfalls into Vyas Valley. Reach Gunji (3,200m) for acclimitization. Overnight stay in traditional homestays.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 3</span>
-                  <h4>Gunji to Jolingkong & Adi Kailash Darshan (Drive: 35 km / 2 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Early morning drive towards Jolingkong (4,570m). Behold the close-up, breathtaking view of Mount Adi Kailash. Visit the sacred Parvati Kund (take a holy dip or touch the water) and the Shiva Temple at its banks. Meditate and absorb the divine energy. Drive back to Gunji for overnight stay.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 4</span>
-                  <h4>Gunji to Nabidhang (Om Parvat Darshan) & Drive to Pithoragarh (Drive: 102 km 4x4 + 95 km road / 9-10 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Start early in the morning and drive to Nabidhang (4,250m) to witness the holy Om Parvat. After Darshan and prayers at the Om Temple, return to Gunji for a quick lunch. Post-lunch, board the local 4x4 Boleros to descend to Dharchula, then transfer to road vehicles and drive directly to Pithoragarh for a well-deserved rest. Overnight stay in Pithoragarh.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 5</span>
-                  <h4>Pithoragarh Local Sightseeing & Rest</h4>
-                </div>
-                <p class="itinerary-desc">Spend the day exploring the beautiful town of Pithoragarh. Visit the historical Pithoragarh Fort, the sacred Mostamanu Temple perched on a scenic ridge, and the serene Chandak Hill offering panoramic views of the Soar Valley. Spend the evening relaxing or shopping for local Kumaoni woolens and handicrafts. Overnight stay in Pithoragarh.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 6</span>
-                  <h4>Pithoragarh to Kathgodam (Drive: 185 km / 6-7 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Drive back to Kathgodam through scenic routes passing via Champawat and Lohaghat. Drop-off at Kathgodam railway station/bus stand by late evening, concluding your sacred Yatra with beautiful memories.</p>
-              </div>
-
-            </div>
-
-            <!-- 3. Pithoragarh to Pithoragarh Timeline -->
-            <div class="itinerary-timeline" id="itinerary-pithoragarh" style="display: none;">
-              
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 1</span>
-                  <h4>Pithoragarh to Dharchula & Drive to Gunji (Drive: 175 km / 7-8 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Start early from Pithoragarh. Reach Dharchula, complete permit clearings and border checks. Transfer to local 4x4 vehicles and climb directly to Gunji (3,200m) in Vyas Valley. Acclimatize and overnight stay in Gunji.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 2</span>
-                  <h4>Gunji to Jolingkong (Adi Kailash) & Nabidhang (Om Parvat) & descend to Dharchula (Drive: 140 km / 9-10 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">A long day. Early morning drive to Jolingkong for Adi Kailash Darshan, then proceed to Nabidhang to witness Om Parvat. Return to Gunji and board 4x4 vehicles to descend down the valley to Dharchula for overnight stay.</p>
-              </div>
-
-              <div class="itinerary-day">
-                <div class="itinerary-title">
-                  <span class="day-badge">Day 3</span>
-                  <h4>Dharchula to Pithoragarh (Drive: 95 km / 4 hrs)</h4>
-                </div>
-                <p class="itinerary-desc">Relaxed morning in Dharchula. Drive back to Pithoragarh. Drop-off at Pithoragarh by afternoon, concluding your quick express Yatra.</p>
               </div>
 
             </div>
           </div>
 
           <!-- Inclusions & Exclusions -->
-          <div class="incl-excl-grid">
-            <div class="trip-info-card">
-              <h3>Inclusions</h3>
-              <ul class="incl-excl-list inclusions">
-                <li>Inner-Line Permits & Government fee (See <a href="faqs#permits" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Permit FAQs</a>)</li>
-                <li>Haldwani/Kathgodam to Kathgodam transport</li>
-                <li>Local 4x4 Bolero for mountain sections</li>
-                <li>Comfortable hotel stays in Dharchula/Pithoragarh (See <a href="faqs#stays" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Stays FAQs</a>)</li>
+          <div class="ak-incl-excl">
+            <div class="ak-incl-card">
+              <h3><span class="icon-dot"><i class="fas fa-check-circle"></i></span> Inclusions</h3>
+              <ul class="ak-incl-excl-list inclusions">
+                <li>Inner-Line Permits &amp; government fees (<a href="faqs#permits">Permit FAQs</a>)</li>
+                <li>Haldwani/Kathgodam transport (for respective packages)</li>
+                <li>Local 4×4 Bolero for all mountain sections</li>
+                <li>Hotel stays in Dharchula &amp; Pithoragarh (<a href="faqs#stays">Stays FAQs</a>)</li>
                 <li>Traditional homestay lodging in Gunji</li>
                 <li>Healthy vegetarian breakfast, lunch, and dinner</li>
-                <li>Certified local tour guide & coordinator</li>
-                <li>First-aid kits, oxygen cylinders & BP monitors (See <a href="faqs#health" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Safety FAQs</a>)</li>
+                <li>Certified local tour guide &amp; coordinator</li>
+                <li>First-aid kits, oxygen cylinders &amp; BP monitors (<a href="faqs#health">Safety FAQs</a>)</li>
               </ul>
             </div>
-            <div class="trip-info-card">
-              <h3>Exclusions</h3>
-              <ul class="incl-excl-list exclusions">
+            <div class="ak-excl-card">
+              <h3><span class="icon-dot"><i class="fas fa-times-circle"></i></span> Exclusions</h3>
+              <ul class="ak-incl-excl-list exclusions">
                 <li>Personal nature expenses (laundry, calls, drinks)</li>
                 <li>Pony / Mule / Porter charges for personal bags</li>
                 <li>Tips for drivers, guides, and hotel staff</li>
@@ -430,95 +1325,115 @@
               </ul>
             </div>
           </div>
+
         </div>
 
-        <!-- Right Side: Inquiry Sticky Sidebar -->
-        <div class="sidebar-sticky" id="inquiry-box">
-          
-          <!-- Pricing Options Card -->
-          <div class="inquiry-card" style="margin-bottom: 20px; border-left: 4px solid var(--secondary);">
-            <h4 style="margin-bottom: 15px;"><i class="fas fa-tags" style="color: var(--secondary); margin-right: 8px;"></i> Package Pricing Options</h4>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              
-              <!-- Option 1 -->
-              <div style="background-color: var(--light); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                  <span style="font-weight: 700; font-size: 0.95rem; color: var(--dark);">Delhi to Delhi</span>
-                  <span style="font-weight: 800; color: var(--primary); font-size: 1.05rem;">₹34,999</span>
+        <!-- RIGHT: Sticky Sidebar -->
+        <div class="ak-sidebar" id="inquiry-box">
+
+          <!-- Price Selector -->
+          <div class="ak-price-card">
+            <div class="ak-price-card-header">
+              <h4><i class="fas fa-tags" style="margin-right:8px; color:var(--secondary);"></i>Package Pricing</h4>
+              <p>Select your preferred pickup point</p>
+            </div>
+            <div class="ak-price-options">
+              <div class="ak-price-opt" id="price-opt-pit" onclick="selectPackage('pithoragarh')">
+                <div class="ak-price-opt-info">
+                  <div class="ak-price-opt-name">Pithoragarh to Pithoragarh</div>
+                  <div class="ak-price-opt-dur"><i class="far fa-clock" style="margin-right:4px;"></i>3 Days / 2 Nights</div>
                 </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 10px;">
-                  <span><i class="far fa-clock"></i> 6 Days / 5 Nights</span>
-                  <span><i class="fas fa-user"></i> Per Person</span>
+                <div class="ak-price-opt-amt">
+                  <span class="amount">₹16,999</span>
+                  <span class="pp">per person</span>
                 </div>
               </div>
-
-              <!-- Option 2 -->
-              <div style="background-color: var(--light); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                  <span style="font-weight: 700; font-size: 0.95rem; color: var(--dark);">Kathgodam to Kathgodam</span>
-                  <span style="font-weight: 800; color: var(--primary); font-size: 1.05rem;">₹29,999</span>
+              <div class="ak-price-opt selected" id="price-opt-kat" onclick="selectPackage('kathgodam')">
+                <div class="ak-price-opt-info">
+                  <div class="ak-price-opt-name">Kathgodam to Kathgodam</div>
+                  <div class="ak-price-opt-dur"><i class="far fa-clock" style="margin-right:4px;"></i>6 Days / 5 Nights</div>
                 </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 10px;">
-                  <span><i class="far fa-clock"></i> 6 Days / 5 Nights</span>
-                  <span><i class="fas fa-user"></i> Per Person</span>
+                <div class="ak-price-opt-amt">
+                  <span class="amount">₹29,999</span>
+                  <span class="pp">per person</span>
                 </div>
               </div>
-
-              <!-- Option 3 -->
-              <div style="background-color: var(--light); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                  <span style="font-weight: 700; font-size: 0.95rem; color: var(--dark);">Pithoragarh to Pithoragarh</span>
-                  <span style="font-weight: 800; color: var(--primary); font-size: 1.05rem;">₹16,999</span>
+              <div class="ak-price-opt" id="price-opt-del" onclick="selectPackage('delhi')">
+                <div class="ak-price-opt-info">
+                  <div class="ak-price-opt-name">Delhi to Delhi</div>
+                  <div class="ak-price-opt-dur"><i class="far fa-clock" style="margin-right:4px;"></i>6 Days / 5 Nights</div>
                 </div>
-                <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 10px;">
-                  <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
-                  <span><i class="fas fa-user"></i> Per Person</span>
+                <div class="ak-price-opt-amt">
+                  <span class="amount">₹34,999</span>
+                  <span class="pp">per person</span>
                 </div>
               </div>
-
             </div>
           </div>
-          
-          <div class="inquiry-card">
-            <h4>Inquire About Yatra</h4>
-            <p>Submit your details to check date availability and group discount pricing.</p>
-            <form>
-              <div class="form-group">
-                <label for="side-name">Your Name *</label>
-                <input type="text" id="side-name" class="form-control" placeholder="E.g., Amit Kumar" required>
+
+          <!-- Inquiry Form -->
+          <div class="ak-inquiry-card">
+            <div class="ak-inquiry-card-header">
+              <h4><i class="fas fa-paper-plane" style="margin-right:8px;"></i>Enquire About This Yatra</h4>
+              <p>We'll confirm availability &amp; group pricing within 2 hours</p>
+            </div>
+            <form class="ak-inquiry-form" id="ak-inquiry-form">
+              <div class="ak-form-group">
+                <label for="ak-name">Your Name *</label>
+                <input type="text" id="ak-name" placeholder="E.g., Amit Kumar" required>
               </div>
-              <div class="form-group">
-                <label for="side-phone">Phone / WhatsApp *</label>
-                <input type="tel" id="side-phone" class="form-control" placeholder="E.g., +91 9876543210" required>
+              <div class="ak-form-group">
+                <label for="ak-phone">Phone / WhatsApp *</label>
+                <input type="tel" id="ak-phone" placeholder="E.g., +91 9876543210" required>
               </div>
-              <div class="form-group">
-                <label for="side-package">Preferred Pickup Package *</label>
-                <select id="side-package" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; outline: none; background: var(--white);">
-                  <option value="delhi">Delhi to Delhi (6D/5N) - ₹34,999</option>
-                  <option value="kathgodam" selected>Kathgodam to Kathgodam (6D/5N) - ₹29,999</option>
-                  <option value="pithoragarh">Pithoragarh to Pithoragarh (3D/2N) - ₹16,999</option>
+              <div class="ak-form-group">
+                <label for="ak-package">Preferred Pickup Package *</label>
+                <select id="ak-package" required>
+                  <option value="pithoragarh">Pithoragarh to Pithoragarh (3D/2N) – ₹16,999</option>
+                  <option value="kathgodam" selected>Kathgodam to Kathgodam (6D/5N) – ₹29,999</option>
+                  <option value="delhi">Delhi to Delhi (6D/5N) – ₹34,999</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="side-date">Travel Date *</label>
-                <input type="date" id="side-date" class="form-control" required>
+              <div class="ak-form-group">
+                <label for="ak-date">Travel Date *</label>
+                <input type="date" id="ak-date" required>
               </div>
-              <div class="form-group">
-                <label for="side-pax">Number of Travelers *</label>
-                <input type="number" id="side-pax" class="form-control" min="1" max="50" placeholder="E.g., 2" required>
+              <div class="ak-form-group">
+                <label for="ak-pax">Number of Travelers *</label>
+                <input type="number" id="ak-pax" min="1" max="50" placeholder="E.g., 2" required>
               </div>
-              <div class="form-group">
-                <label for="side-notes">Special Requests</label>
-                <textarea id="side-notes" class="form-control" rows="3" placeholder="Dietary preference, medical issues, extra days..."></textarea>
+              <div class="ak-form-group">
+                <label for="ak-notes">Special Requests</label>
+                <textarea id="ak-notes" placeholder="Dietary preferences, medical conditions, extra days..."></textarea>
               </div>
-              <button type="submit" class="btn btn-secondary" style="width: 100%; padding: 12px; margin-top: 10px;">Enquire & Lock Price</button>
+              <button type="submit" class="ak-submit-btn" id="ak-submit-btn">
+                <i class="fas fa-lock"></i> Enquire &amp; Lock Price
+              </button>
             </form>
           </div>
+
+          <!-- Trust Signals -->
+          <div class="ak-trust-bar">
+            <div class="ak-trust-item">
+              <i class="fas fa-shield-alt"></i>
+              <span><strong>100% Safe</strong> — Oxygen cylinders &amp; BP monitors on every trip</span>
+            </div>
+            <div class="ak-trust-item">
+              <i class="fas fa-id-card"></i>
+              <span><strong>Permits Managed</strong> — Inner-Line &amp; all govt fees included</span>
+            </div>
+            <div class="ak-trust-item">
+              <i class="fas fa-headset"></i>
+              <span><strong>24/7 Support</strong> — WhatsApp us anytime during the journey</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -558,7 +1473,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Sarthii Travels. All Rights Reserved. Designed by <a href="https://www.rudraanshyatra.com" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">Rudraansh Yatra</a> with care for spiritual travel.</p>
+        <p>&copy; 2026 Sarthii Travels. All Rights Reserved.</p>
         <div style="display: flex; gap: 15px;">
           <a href="https://www.facebook.com/share/1F1riiLHNz/" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer" title="Follow Sarthii Travels on Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/sarthitours?igsh=MzkwczE1bHYzOGg4" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer" title="Follow Sarthii Travels on Instagram"><i class="fab fa-instagram"></i></a>
@@ -577,5 +1492,69 @@
 
   <!-- Scripts -->
   <script src="js/main.js?v=3"></script>
+  <script>
+    // Hero BG animated load
+    window.addEventListener('load', () => {
+      document.getElementById('ak-hero-bg').classList.add('loaded');
+    });
+
+    // Itinerary Tab Switching
+    document.getElementById('ak-tabs').addEventListener('click', function(e) {
+      const btn = e.target.closest('.ak-tab-btn');
+      if (!btn) return;
+      const target = btn.dataset.target;
+
+      document.querySelectorAll('.ak-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.ak-timeline').forEach(t => t.style.display = 'none');
+      const panel = document.getElementById(target);
+      if (panel) panel.style.display = 'block';
+    });
+
+    // Price option selection
+    function selectPackage(key) {
+      document.querySelectorAll('.ak-price-opt').forEach(el => el.classList.remove('selected'));
+      const map = { pithoragarh: 'price-opt-pit', kathgodam: 'price-opt-kat', delhi: 'price-opt-del' };
+      document.getElementById(map[key]).classList.add('selected');
+
+      // Also update the select dropdown in inquiry form
+      const selectEl = document.getElementById('ak-package');
+      if (selectEl) selectEl.value = key;
+
+      // Switch itinerary tab too
+      const tabMap = { pithoragarh: 'itinerary-pithoragarh', kathgodam: 'itinerary-kathgodam', delhi: 'itinerary-delhi' };
+      document.querySelectorAll('.ak-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.target === tabMap[key]);
+      });
+      document.querySelectorAll('.ak-timeline').forEach(t => t.style.display = 'none');
+      const panel = document.getElementById(tabMap[key]);
+      if (panel) panel.style.display = 'block';
+    }
+
+    // Form submission → WhatsApp
+    document.getElementById('ak-inquiry-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('ak-name').value.trim();
+      const phone = document.getElementById('ak-phone').value.trim();
+      const pkg = document.getElementById('ak-package').value;
+      const date = document.getElementById('ak-date').value;
+      const pax = document.getElementById('ak-pax').value;
+      const notes = document.getElementById('ak-notes').value.trim();
+
+      const pkgLabels = {
+        pithoragarh: 'Pithoragarh to Pithoragarh (3D/2N) – ₹16,999',
+        kathgodam: 'Kathgodam to Kathgodam (6D/5N) – ₹29,999',
+        delhi: 'Delhi to Delhi (6D/5N) – ₹34,999'
+      };
+
+      const msg = `*Adi Kailash & Om Parvat Yatra Enquiry*\n\n` +
+        `*Name:* ${name}\n*Phone:* ${phone}\n*Package:* ${pkgLabels[pkg]}\n` +
+        `*Travel Date:* ${date || 'Not specified'}\n*Travelers:* ${pax || 'Not specified'}\n` +
+        `*Special Requests:* ${notes || 'None'}\n\nPlease confirm availability and pricing. Thank you!`;
+
+      window.open('https://wa.me/918171265958?text=' + encodeURIComponent(msg), '_blank');
+    });
+  </script>
 </body>
 </html>
