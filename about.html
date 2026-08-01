@@ -3,36 +3,649 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Sarthii Travels Dharchula</title>
+  <title>About Us - Sarthii Travels Dharchula | Local Himalayan Tour Experts</title>
   <meta name="description" content="Discover our local heritage, safety standards, and commitment to safe spiritual yatras in the Kumaon Himalayas. We are Dharchula's verified operators.">
   <meta name="keywords" content="About Sarthii Travels, Dharchula tour guide, local travel experts, high altitude safety, Uttarakhand pilgrimage team">
   <meta name="author" content="Sarthii Travels">
-  
-  <!-- Open Graph / Facebook -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sarthiitravels.com/about">
   <meta property="og:title" content="About Us - Sarthii Travels Dharchula">
   <meta property="og:description" content="Learn about our team, safety standards, and heritage. We are local experts verified by travelers.">
-  <meta property="og:image" content="http://localhost:8000/assets/logo.jpg">
+  <meta property="og:image" content="https://sarthiitravels.com/assets/logo.jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="About Us - Sarthii Travels">
   <meta property="twitter:description" content="Learn why we are Dharchula's most trusted travel team. Safety and devotion in every journey.">
-  <meta property="twitter:image" content="http://localhost:8000/assets/logo.jpg">
+  <meta property="twitter:image" content="https://sarthiitravels.com/assets/logo.jpg">
 
-  <!-- CSS Stylesheets -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css?v=3">
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== ABOUT PAGE — PREMIUM REDESIGN ===== */
+
+    /* --- Hero Banner --- */
+    .ab-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding-top: var(--banner-height);
+    }
+
+    .ab-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+
+    .ab-hero-bg.loaded { transform: scale(1); }
+
+    .ab-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10,18,40,0.25) 0%,
+        rgba(10,18,40,0.55) 50%,
+        rgba(10,18,40,0.92) 100%
+      );
+    }
+
+    .ab-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 0 64px;
+      width: 100%;
+    }
+
+    .ab-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,140,0,0.15);
+      border: 1px solid rgba(255,140,0,0.45);
+      backdrop-filter: blur(8px);
+      color: #ffb347;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .ab-hero h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .ab-hero h1 span { color: var(--secondary); }
+
+    .ab-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .ab-hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ab-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .ab-chip i { color: var(--secondary); font-size: 0.8rem; }
+
+    /* --- Stats Strip --- */
+    .ab-stats-strip {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+
+    .ab-stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ab-stat {
+      padding: 30px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+    }
+
+    .ab-stat:last-child { border-right: none; }
+
+    .ab-stat-num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ab-stat:nth-child(odd) .ab-stat-num { color: var(--primary); }
+    .ab-stat:nth-child(even) .ab-stat-num { color: var(--secondary); }
+
+    .ab-stat-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* --- Main Body --- */
+    .ab-body { background: #f8fafc; }
+
+    /* --- Section utility --- */
+    .ab-section {
+      padding: 80px 0;
+    }
+
+    .ab-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .ab-section-label::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .ab-section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .ab-section-desc {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 640px;
+    }
+
+    /* --- Philosophy / Story --- */
+    .ab-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ab-story-image {
+      position: relative;
+    }
+
+    .ab-story-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .ab-story-image-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: linear-gradient(135deg, var(--secondary), #e07b00);
+      color: #fff;
+      padding: 16px 22px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(255,140,0,0.4);
+      line-height: 1.3;
+    }
+
+    .ab-story-image-badge span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .ab-story-text p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+
+    .ab-story-text p:last-child { margin-bottom: 0; }
+    .ab-story-text a {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .ab-story-text a:hover { border-color: var(--primary); }
+
+    /* Name origin callout */
+    .ab-name-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: linear-gradient(135deg, rgba(0,128,255,0.06), rgba(0,128,255,0.02));
+      border: 1px solid rgba(0,128,255,0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+
+    .ab-name-callout i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .ab-name-callout p {
+      font-size: 0.92rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+      color: var(--text-main);
+    }
+
+    .ab-name-callout strong { color: var(--dark); font-weight: 700; }
+
+    /* --- Pillars / Values --- */
+    .ab-pillars-section {
+      background: #fff;
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ab-pillars-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .ab-pillars-header .ab-section-label {
+      justify-content: center;
+    }
+
+    .ab-pillars-header .ab-section-label::before { display: none; }
+    .ab-pillars-header .ab-section-label::after {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .ab-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .ab-pillar-card {
+      background: var(--light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 36px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ab-pillar-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+    }
+
+    .ab-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+      background: #fff;
+    }
+
+    .ab-pillar-card:hover::after { transform: scaleX(1); }
+
+    .ab-pillar-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin: 0 auto 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .ab-pillar-card:hover .ab-pillar-icon { transform: scale(1.08); }
+
+    .ab-pillar-icon.blue { background: rgba(0,128,255,0.1); color: var(--primary); }
+    .ab-pillar-icon.orange { background: rgba(255,140,0,0.1); color: var(--secondary); }
+    .ab-pillar-icon.green { background: rgba(34,197,94,0.1); color: #22c55e; }
+
+    .ab-pillar-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .ab-pillar-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* --- Why us features --- */
+    .ab-features-section { padding: 80px 0; background: #f8fafc; }
+
+    .ab-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 44px;
+    }
+
+    .ab-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 24px 22px;
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+
+    .ab-feature-item:hover {
+      border-color: rgba(0,128,255,0.25);
+      box-shadow: var(--shadow-md);
+    }
+
+    .ab-feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(0,128,255,0.1), rgba(0,128,255,0.04));
+      color: var(--primary);
+    }
+
+    .ab-feature-text h4 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .ab-feature-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* --- CTA Section --- */
+    .ab-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ab-cta::before {
+      content: 'ॐ';
+      position: absolute;
+      font-size: 20rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.02);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .ab-cta-inner { position: relative; z-index: 1; }
+
+    .ab-cta h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .ab-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .ab-cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ab-cta-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, var(--secondary), #e07b00);
+      color: #fff;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255,140,0,0.35);
+      transition: all 0.3s ease;
+    }
+
+    .ab-cta-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255,140,0,0.5);
+    }
+
+    .ab-cta-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      transition: all 0.3s ease;
+    }
+
+    .ab-cta-btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== RESPONSIVE — TABLET ===== */
+    @media (max-width: 1024px) {
+      .ab-story-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .ab-story-image-badge {
+        bottom: -14px;
+        right: -10px;
+        padding: 12px 16px;
+      }
+      .ab-pillars-grid { gap: 16px; }
+    }
+
+    /* ===== RESPONSIVE — MOBILE ===== */
+    @media (max-width: 768px) {
+
+      /* Hero */
+      .ab-hero { min-height: 75vh; align-items: flex-end; }
+      .ab-hero-content { padding: 32px 0 80px; }
+      .ab-hero h1 { font-size: clamp(1.75rem, 8vw, 2.3rem); margin-bottom: 12px; }
+      .ab-hero-badge { font-size: 0.68rem; padding: 5px 12px; margin-bottom: 14px; }
+      .ab-hero-sub { font-size: 0.9rem; margin-bottom: 22px; }
+      .ab-chip { padding: 7px 12px; font-size: 0.78rem; }
+      .ab-hero-chips { gap: 8px; }
+
+      /* Stats */
+      .ab-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .ab-stat {
+        padding: 22px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+      .ab-stat:nth-child(even) { border-right: none; }
+      .ab-stat:nth-child(3),
+      .ab-stat:nth-child(4) { border-bottom: none; }
+      .ab-stat-num { font-size: 1.9rem; }
+      .ab-stat-label { font-size: 0.68rem; }
+
+      /* Sections */
+      .ab-section { padding: 48px 0; }
+      .ab-section-title { font-size: 1.5rem; }
+
+      /* Story / Philosophy */
+      .ab-story-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .ab-story-image-badge {
+        bottom: -12px;
+        right: 12px;
+        padding: 10px 14px;
+        font-size: 0.78rem;
+      }
+      .ab-story-image-badge span { font-size: 1.3rem; }
+      .ab-story-image { margin-bottom: 18px; }
+      .ab-name-callout { padding: 14px 16px; }
+      .ab-name-callout i { font-size: 1.2rem; }
+      .ab-story-text p { font-size: 0.93rem; }
+
+      /* Pillars */
+      .ab-pillars-section { padding: 48px 0; }
+      .ab-pillars-grid { grid-template-columns: 1fr; gap: 14px; }
+      .ab-pillar-card {
+        padding: 24px 20px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .ab-pillar-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        flex-shrink: 0;
+        border-radius: 12px;
+        font-size: 1.3rem;
+      }
+      .ab-pillar-card::after { display: none; }
+      .ab-pillar-card:hover { transform: none; }
+      .ab-pillar-card h3 { font-size: 1rem; margin-bottom: 6px; }
+      .ab-pillar-card p { font-size: 0.85rem; }
+
+      /* Features */
+      .ab-features-section { padding: 48px 0; }
+      .ab-features-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+      .ab-feature-item { padding: 18px 16px; gap: 14px; }
+      .ab-feature-icon { width: 42px; height: 42px; font-size: 1.05rem; }
+      .ab-feature-text h4 { font-size: 0.9rem; }
+      .ab-feature-text p { font-size: 0.82rem; }
+
+      /* CTA */
+      .ab-cta { padding: 56px 0; }
+      .ab-cta::before { font-size: 12rem; }
+      .ab-cta h2 { font-size: 1.55rem; }
+      .ab-cta p { font-size: 0.9rem; margin-bottom: 28px; }
+      .ab-cta-btns { flex-direction: column; align-items: center; gap: 10px; }
+      .ab-cta-btn-primary,
+      .ab-cta-btn-outline { width: 100%; max-width: 320px; justify-content: center; padding: 14px 20px; }
+    }
+
+    /* ===== SMALL PHONES ===== */
+    @media (max-width: 380px) {
+      .ab-hero h1 { font-size: 1.6rem; }
+      .ab-hero-chips { gap: 6px; }
+      .ab-chip { padding: 6px 10px; font-size: 0.73rem; }
+      .ab-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .ab-stat-num { font-size: 1.65rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 1. FLOATING TOP BANNER (Sticky Navbar) -->
+  <!-- STICKY NAVBAR -->
   <header class="floating-top-banner">
     <div class="container">
       <div class="banner-content">
-        <!-- Brand Name Small / Logo -->
         <a href="/" class="logo-link">
           <img src="assets/logo.jpg" alt="Sarthii Travels Logo" style="height: 38px; width: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border);">
           <div style="display: flex; flex-direction: column; line-height: 1.1;">
@@ -46,15 +659,13 @@
           <div class="dropdown">
             <a href="destinations" class="dropdown-toggle">Destinations <i class="fas fa-chevron-down"></i></a>
             <div class="dropdown-menu">
-              <a href="adi-kailash">Adi Kailash & Om Parvat Yatra</a>
+              <a href="adi-kailash">Adi Kailash &amp; Om Parvat Yatra</a>
               <a href="darma-valley">Darma Valley Trek</a>
               <a href="khaliya-top">Khaliya Top Trek</a>
             </div>
           </div>
           <a href="faqs">FAQs</a>
           <a href="contact">Contact Us</a>
-          
-          <!-- Mobile-only search and quick CTAs inside navigation drawer -->
           <div class="mobile-only-search">
             <div class="search-wrapper">
               <input type="text" class="search-input" placeholder="Search for Himalayan tours..." aria-label="Search trips">
@@ -63,12 +674,10 @@
             </div>
           </div>
           <div class="mobile-only-nav-actions">
-            <a href="https://wa.me/918171265958" class="banner-whatsapp-btn" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <a href="https://wa.me/918171265958" class="banner-whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
             <a href="tel:+918171265958" class="banner-call-btn"><i class="fas fa-phone-alt"></i> Call Now</a>
           </div>
         </nav>
-
-        <!-- Search Bar in Header -->
         <div class="header-search-wrapper">
           <div class="search-wrapper">
             <input type="text" class="search-input" placeholder="Search for Himalayan tours..." aria-label="Search trips">
@@ -76,116 +685,212 @@
             <div class="search-suggestions"></div>
           </div>
         </div>
-
         <div class="banner-actions">
           <a href="https://wa.me/918171265958" class="banner-whatsapp-btn" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
           <a href="tel:+918171265958" class="banner-call-btn"><i class="fas fa-phone-alt"></i> <span>Call Now</span></a>
         </div>
         <button class="menu-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
 
-
-  <!-- SUBPAGE HEADER -->
-  <section class="trip-header-section" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('assets/hero-bg.jpg');">
-    <div class="container">
-      <div class="trip-header-content">
-        <h1>About Sarthii Travels</h1>
-        <p style="font-size: 1.15rem; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.9);">Our background, values, and commitment to safe spiritual yatras in the Kumaon Himalayas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT DETAILED CONTENT -->
-  <section style="background-color: var(--white);">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; margin-bottom: 60px;">
-        <div>
-          <img src="assets/hero-bg.jpg" alt="Sarthii Travels Team Location" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+  <!-- 1. HERO -->
+  <section class="ab-hero">
+    <div class="ab-hero-bg" id="ab-hero-bg"></div>
+    <div class="ab-hero-overlay"></div>
+    <div class="ab-hero-content">
+      <div class="container">
+        <div class="ab-hero-badge">
+          <i class="fas fa-mountain"></i>
+          Local Experts · Dharchula, Uttarakhand
         </div>
-        <div>
-          <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Our Philosophy</span>
-          <h2 style="font-size: 2.2rem; margin: 5px 0 20px;">Guided by Devotion, Powered by Safety</h2>
-          <p style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.7;">
-            Sarthii Travels was established in Dharchula (Pithoragarh district) to bridge the gap between pilgrims and the remote, sacred peaks of Kumaon. The name **Sarthii** (meaning "Charioteer") is inspired by Lord Krishna's role guiding Arjuna, reflecting our commitment to guide you safely through your spiritual challenges in the mountains.
-          </p>
-          <p style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.7;">
-            We specialize in providing end-to-end logistics for the <a href="adi-kailash" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Adi Kailash & Om Parvat Yatra</a> and the <a href="darma-valley" style="color: var(--primary); font-weight: 700; text-decoration: underline;">Darma Valley Expedition</a>. These areas border Tibet and require special Inner-Line Permits, medical checks, and customized high-clearance 4x4 vehicles. We manage the entire permit paperwork, arrange vetted local homestays, and dispatch oxygen-equipped convoy vehicles.
-          </p>
-          <p style="color: var(--text-main); font-size: 0.95rem; line-height: 1.7;">
-            By focusing exclusively on the Kumaon hills, we support the local border communities. All our guides, drivers, and hosts are locals who possess deep traditional knowledge of the valleys and weather patterns.
-          </p>
-        </div>
-      </div>
-
-      <!-- Core Pillars -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 80px;">
-        
-        <div style="background-color: var(--light); padding: 35px; border-radius: var(--radius-md); border: 1px solid var(--border); text-align: center;">
-          <div style="width: 60px; height: 60px; background-color: rgba(0, 128, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.6rem; margin: 0 auto 20px;">
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Unmatched Trust</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Our tagline is **Travel With Trust**. We maintain absolute transparency in pricing, bookings, and accommodation details. No surprise fees.</p>
-        </div>
-
-        <div style="background-color: var(--light); padding: 35px; border-radius: var(--radius-md); border: 1px solid var(--border); text-align: center;">
-          <div style="width: 60px; height: 60px; background-color: rgba(255, 140, 0, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 1.6rem; margin: 0 auto 20px;">
-            <i class="fas fa-notes-medical"></i>
-          </div>
-          <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Altitude Safety</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Traveling above 4,500m requires medical diligence. We schedule gradual acclimatization stops, monitor oxygen levels daily, and carry high-flow oxygen cylinders.</p>
-        </div>
-
-        <div style="background-color: var(--light); padding: 35px; border-radius: var(--radius-md); border: 1px solid var(--border); text-align: center;">
-          <div style="width: 60px; height: 60px; background-color: rgba(0, 128, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.6rem; margin: 0 auto 20px;">
-            <i class="fas fa-seedling"></i>
-          </div>
-          <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Eco-Conscious Tourism</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">We encourage minimal plastic footprints and support village homestays. This directly funnels tourism revenue to remote border villagers of Kumaon.</p>
-        </div>
-
-      </div>
-
-      <!-- Stats counter -->
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 50px 0; margin-top: 80px;">
-        <div>
-          <span style="font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block;">1,200+</span>
-          <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Yatris Guided</span>
-        </div>
-        <div>
-          <span style="font-size: 2.5rem; font-weight: 800; color: var(--secondary); display: block;">100%</span>
-          <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Permits Verified</span>
-        </div>
-        <div>
-          <span style="font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block;">15+</span>
-          <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Local Guides</span>
-        </div>
-        <div>
-          <span style="font-size: 2.5rem; font-weight: 800; color: var(--secondary); display: block;">9+ Years</span>
-          <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Mountain Experience</span>
+        <h1>Guided by <span>Devotion</span>,<br>Powered by Safety</h1>
+        <p class="ab-hero-sub">
+          We are Sarthii Travels — Dharchula's most trusted local operator for sacred Himalayan pilgrimages and treks in the Kumaon borderlands.
+        </p>
+        <div class="ab-hero-chips">
+          <span class="ab-chip"><i class="fas fa-shield-alt"></i> 9+ Years Experience</span>
+          <span class="ab-chip"><i class="fas fa-users"></i> 1,200+ Yatris Guided</span>
+          <span class="ab-chip"><i class="fas fa-check-circle"></i> 100% Permits Verified</span>
+          <span class="ab-chip"><i class="fas fa-leaf"></i> Eco-Conscious Travel</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section style="background-color: var(--light); padding: 60px 0; text-align: center; border-top: 1px solid var(--border);">
+
+  <!-- 2. STATS STRIP -->
+  <div class="ab-stats-strip">
     <div class="container">
-      <h2 style="font-size: 2rem; margin-bottom: 15px; color: var(--dark);">Ready to Begin Your Himalayan Pilgrimage?</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.6;">Get in touch with our team in Dharchula to check dates, permit statuses, and arrange a personalized itinerary.</p>
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <a href="contact" class="btn btn-secondary">Contact Our Team</a>
-        <a href="destinations" class="btn btn-outline">Explore Our Packages</a>
+      <div class="ab-stats-inner">
+        <div class="ab-stat">
+          <span class="ab-stat-num">1,200+</span>
+          <span class="ab-stat-label">Yatris Guided</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat-num">100%</span>
+          <span class="ab-stat-label">Permits Verified</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat-num">15+</span>
+          <span class="ab-stat-label">Local Guides</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat-num">9+ Yrs</span>
+          <span class="ab-stat-label">Mountain Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 3. OUR STORY -->
+  <section class="ab-section" style="background:#fff;">
+    <div class="container">
+      <div class="ab-story-grid">
+
+        <!-- Image -->
+        <div class="ab-story-image">
+          <img src="assets/hero-bg.jpg" alt="Sarthii Travels team in the Kumaon Himalayas">
+          <div class="ab-story-image-badge">
+            <span>9+</span>
+            Years of<br>Trusted Service
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="ab-story-text">
+          <div class="ab-section-label"><i class="fas fa-book-open"></i> Our Story</div>
+          <h2 class="ab-section-title">Born in the Mountains,<br>Built for Pilgrims</h2>
+
+          <div class="ab-name-callout">
+            <i class="fas fa-om"></i>
+            <p>The name <strong>Sarthii</strong> (सारथी) means <strong>"Charioteer"</strong> — inspired by Lord Krishna's role guiding Arjuna through the Mahabharata. Just as Krishna guided with wisdom and devotion, we guide you safely through the mountains.</p>
+          </div>
+
+          <p>Sarthii Travels was established in Dharchula, Pithoragarh district, to bridge the gap between pilgrims and the remote, sacred peaks of Kumaon. Our founders grew up in the shadow of these mountains and know every valley, every weather pattern, and every checkpoint on the way to Adi Kailash.</p>
+
+          <p>We specialize in end-to-end logistics for the <a href="adi-kailash">Adi Kailash &amp; Om Parvat Yatra</a> and the <a href="darma-valley">Darma Valley Expedition</a> — areas bordering Tibet that require special Inner-Line Permits, medical checks, and high-clearance 4×4 vehicles. We handle all of it so you can focus entirely on your spiritual journey.</p>
+
+          <p>By focusing exclusively on the Kumaon hills, we actively support the local border communities. Every guide, driver, and host is a local — bringing deep traditional knowledge that no outsider can replicate.</p>
+        </div>
+
       </div>
     </div>
   </section>
+
+
+  <!-- 4. OUR VALUES / PILLARS -->
+  <section class="ab-pillars-section">
+    <div class="container">
+      <div class="ab-pillars-header">
+        <div class="ab-section-label"><i class="fas fa-star"></i> Our Core Values</div>
+        <h2 class="ab-section-title">What We Stand For</h2>
+        <p class="ab-section-desc" style="margin: 0 auto; text-align: center;">Three pillars guide everything we do — from the moment you book with us to the moment you safely return home.</p>
+      </div>
+      <div class="ab-pillars-grid">
+
+        <div class="ab-pillar-card">
+          <div class="ab-pillar-icon blue"><i class="fas fa-heart"></i></div>
+          <div>
+            <h3>Unmatched Trust</h3>
+            <p>Our tagline is <strong>Travel With Trust</strong>. We maintain absolute transparency in pricing, bookings, and accommodation details. No hidden fees — ever. What we quote is what you pay.</p>
+          </div>
+        </div>
+
+        <div class="ab-pillar-card">
+          <div class="ab-pillar-icon orange"><i class="fas fa-notes-medical"></i></div>
+          <div>
+            <h3>Altitude Safety First</h3>
+            <p>Traveling above 4,500m demands medical diligence. We schedule gradual acclimatization stops, monitor blood-oxygen levels daily, and carry high-flow oxygen cylinders and BP monitors on every trip.</p>
+          </div>
+        </div>
+
+        <div class="ab-pillar-card">
+          <div class="ab-pillar-icon green"><i class="fas fa-seedling"></i></div>
+          <div>
+            <h3>Eco-Conscious Tourism</h3>
+            <p>We encourage minimal plastic footprints and champion village homestays over large hotels. Every booking you make funnels revenue directly to the remote border villagers of Kumaon.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. WHY CHOOSE US -->
+  <section class="ab-features-section">
+    <div class="container">
+      <div class="ab-section-label"><i class="fas fa-thumbs-up"></i> Why Choose Us</div>
+      <h2 class="ab-section-title">What Sets Us Apart</h2>
+      <p class="ab-section-desc">We are not a generic travel agency. We are specialists — locals who have done these routes hundreds of times.</p>
+
+      <div class="ab-features-grid">
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-id-card"></i></div>
+          <div class="ab-feature-text">
+            <h4>Permit Experts</h4>
+            <p>Inner-Line Permits for Vyas Valley are complex and time-sensitive. We have been navigating this paperwork for over 9 years and never missed a clearance.</p>
+          </div>
+        </div>
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-truck-monster"></i></div>
+          <div class="ab-feature-text">
+            <h4>Purpose-Built Fleet</h4>
+            <p>Our 4×4 Scorpio convoy is maintained, inspected, and driver-trained specifically for the rough mountain roads of the Vyas and Darma valleys.</p>
+          </div>
+        </div>
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-home"></i></div>
+          <div class="ab-feature-text">
+            <h4>Curated Homestays</h4>
+            <p>We have handpicked and personally vetted every homestay in Gunji, Kutti, and Dharchula for cleanliness, food quality, and warmth of service.</p>
+          </div>
+        </div>
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-user-shield"></i></div>
+          <div class="ab-feature-text">
+            <h4>Certified Guides</h4>
+            <p>All our guides carry government-issued certifications, first-aid training, and speak both Hindi and local Kumaoni dialects for seamless communication.</p>
+          </div>
+        </div>
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-utensils"></i></div>
+          <div class="ab-feature-text">
+            <h4>Pure Vegetarian Meals</h4>
+            <p>We understand that most pilgrims follow vegetarian diets. All meals throughout the journey — from breakfast to dinner — are freshly cooked vegetarian.</p>
+          </div>
+        </div>
+        <div class="ab-feature-item">
+          <div class="ab-feature-icon"><i class="fas fa-headset"></i></div>
+          <div class="ab-feature-text">
+            <h4>24/7 WhatsApp Support</h4>
+            <p>Our team is available around the clock during your journey. Whether it's a weather update or an emergency — we respond within minutes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 6. CTA -->
+  <section class="ab-cta">
+    <div class="container">
+      <div class="ab-cta-inner">
+        <h2>Ready to Begin Your Himalayan Pilgrimage?</h2>
+        <p>Get in touch with our team in Dharchula to check dates, permit statuses, and arrange a personalized itinerary for your group.</p>
+        <div class="ab-cta-btns">
+          <a href="contact" class="ab-cta-btn-primary"><i class="fas fa-paper-plane"></i> Contact Our Team</a>
+          <a href="destinations" class="ab-cta-btn-outline"><i class="fas fa-map-marked-alt"></i> Explore Our Packages</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -217,41 +922,37 @@
         <div class="footer-links">
           <h4>Contact Info</h4>
           <ul style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">
-            <li style="margin-bottom: 12px;"><i class="fas fa-phone-alt" style="color: var(--secondary); margin-right: 8px;"></i> <a href="tel:+918171265958">+91-8171265958</a></li>
-            <li style="margin-bottom: 12px;"><i class="fab fa-whatsapp" style="color: #25d366; margin-right: 8px;"></i> <a href="https://wa.me/918171265958" target="_blank">Chat on WhatsApp</a></li>
-            <li style="margin-bottom: 12px;"><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i> info@sarthiitravels.com</li>
-            <li style="margin-bottom: 12px;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i> <a href="https://maps.google.com/?q=H696%2B7F+Pithoragarh,+Uttarakhand" target="_blank" rel="noopener noreferrer">Tanakpur Road, Aincholi,<br>Near RN Flex, Pithoragarh,<br>Uttarakhand, India</a></li>
+            <li style="margin-bottom: 12px;"><i class="fas fa-phone-alt" style="color: var(--secondary); margin-right: 8px;"></i><a href="tel:+918171265958">+91-8171265958</a></li>
+            <li style="margin-bottom: 12px;"><i class="fab fa-whatsapp" style="color: #25d366; margin-right: 8px;"></i><a href="https://wa.me/918171265958" target="_blank">Chat on WhatsApp</a></li>
+            <li style="margin-bottom: 12px;"><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 8px;"></i>info@sarthiitravels.com</li>
+            <li style="margin-bottom: 12px;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 8px;"></i><a href="https://maps.google.com/?q=H696%2B7F+Pithoragarh,+Uttarakhand" target="_blank" rel="noopener noreferrer">Tanakpur Road, Aincholi,<br>Near RN Flex, Pithoragarh,<br>Uttarakhand, India</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Sarthii Travels. All Rights Reserved. Designed by <a href="https://www.rudraanshyatra.com" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">Rudraansh Yatra</a> with care for spiritual travel.</p>
+        <p>&copy; 2026 Sarthii Travels. All Rights Reserved.</p>
         <div style="display: flex; gap: 15px;">
-          <a href="https://www.facebook.com/share/1F1riiLHNz/" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer" title="Follow Sarthii Travels on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/sarthitours?igsh=MzkwczE1bHYzOGg4" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer" title="Follow Sarthii Travels on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1F1riiLHNz/" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sarthitours?igsh=MzkwczE1bHYzOGg4" class="social-link" style="color: rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
           <a href="#" class="social-link" style="color: rgba(255,255,255,0.5);"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- MOBILE STICKY CTA BAR -->
+  <!-- MOBILE CTA BAR -->
   <div class="mobile-cta-bar">
-    <a href="tel:+918171265958" class="cta-call">
-      <i class="fas fa-phone-alt"></i>
-      <span>Call Us</span>
-    </a>
-    <a href="https://wa.me/918171265958" class="cta-whatsapp" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-    <a href="destinations" class="cta-inquiry">
-      <i class="fas fa-map-marker-alt"></i>
-      <span>Packages</span>
-    </a>
+    <a href="tel:+918171265958" class="cta-call"><i class="fas fa-phone-alt"></i><span>Call Us</span></a>
+    <a href="https://wa.me/918171265958" class="cta-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="destinations" class="cta-inquiry"><i class="fas fa-map-marker-alt"></i><span>Packages</span></a>
   </div>
 
   <!-- Scripts -->
   <script src="js/main.js?v=3"></script>
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('ab-hero-bg').classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
