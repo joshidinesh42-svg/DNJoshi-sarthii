@@ -50,9 +50,9 @@ function initNavigation() {
 
 // 2. Search Autocomplete & Redirection
 const packages = [
-  { name: 'Adi Kailash & Om Parvat Yatra', url: 'adi-kailash.html', keywords: ['adi', 'kailash', 'om', 'parvat', 'spiritual', 'yatra'] },
-  { name: 'Darma Valley Trek', url: 'darma-valley.html', keywords: ['darma', 'valley', 'panchachuli', 'glacier', 'trek'] },
-  { name: 'Khaliya Top Trek', url: 'khaliya-top.html', keywords: ['khaliya', 'top', 'munsiyari', 'meadow', 'trek'] }
+  { name: 'Adi Kailash & Om Parvat Yatra', url: 'adi-kailash', keywords: ['adi', 'kailash', 'om', 'parvat', 'spiritual', 'yatra'] },
+  { name: 'Darma Valley Trek', url: 'darma-valley', keywords: ['darma', 'valley', 'panchachuli', 'glacier', 'trek'] },
+  { name: 'Khaliya Top Trek', url: 'khaliya-top', keywords: ['khaliya', 'top', 'munsiyari', 'meadow', 'trek'] }
 ];
 
 function initSearch() {

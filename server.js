@@ -23,6 +23,18 @@ const server = http.createServer((req, res) => {
   // Parse URL to discard query parameters/hashes
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   let pathname = parsedUrl.pathname;
+
+  // Redirect requests ending in .html to clean pretty URLs
+  if (pathname.endsWith('.html')) {
+    let cleanPath = pathname.slice(0, -5);
+    if (cleanPath === '/index') {
+      cleanPath = '/';
+    }
+    const search = parsedUrl.search || '';
+    res.writeHead(301, { 'Location': cleanPath + search });
+    res.end();
+    return;
+  }
   
   // Default to index.html for root path
   if (pathname === '/') {
