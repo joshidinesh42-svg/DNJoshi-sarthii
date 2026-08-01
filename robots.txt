@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: http://localhost:8000/sitemap.xml
+Sitemap: https://sarthiitravels.com/sitemap.xml

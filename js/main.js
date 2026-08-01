@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQs();
   initInquiryForms();
   initItineraryTabs();
+  initDiscountPopup();
 });
 
 // 1. Navigation & Dropdown Management
@@ -424,4 +425,169 @@ function initItineraryTabs() {
       }
     });
   }
+}
+
+// 6. Pre-Booking Yatra Discount Lead Popup
+function initDiscountPopup() {
+  // Check if user already submitted or dismissed the popup
+  if (localStorage.getItem('sarthii_prebook_popup_dismissed')) {
+    return;
+  }
+
+  // Create Popup Overlay and Inner Elements
+  const popupOverlay = document.createElement('div');
+  popupOverlay.className = 'prebook-popup-overlay';
+  popupOverlay.innerHTML = `
+    <div class="prebook-popup-card">
+      <button class="prebook-popup-close-btn" aria-label="Close offer popup"><i class="fas fa-times"></i></button>
+      
+      <div class="prebook-popup-image-side">
+        <div class="prebook-popup-badge">Limited Offer</div>
+        <h3>Pre-Book Your Yatra & Save</h3>
+        <p>Secure your slots early for the 2026 spiritual season and get exclusive discounts.</p>
+        <div class="prebook-popup-benefit-list">
+          <div class="prebook-popup-benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Flat ₹2,500 Off Per Person</span>
+          </div>
+          <div class="prebook-popup-benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Priority Permit Clearance</span>
+          </div>
+          <div class="prebook-popup-benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Flexible Dates & Rescheduling</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="prebook-popup-form-side">
+        <h4>Claim <span>Pre-Book Offer</span> 🏔️</h4>
+        <p>Fill out the form below to receive your discount coupon and draft itinerary details.</p>
+        
+        <form class="prebook-popup-form">
+          <div class="prebook-form-group">
+            <label for="popup-name">Full Name</label>
+            <input type="text" id="popup-name" required placeholder="e.g. Amit Sharma">
+          </div>
+          <div class="prebook-form-group">
+            <label for="popup-phone">Phone Number (WhatsApp)</label>
+            <input type="tel" id="popup-phone" required placeholder="e.g. +91 9876543210">
+          </div>
+          <div class="prebook-form-group">
+            <label for="popup-yatra">Choose Yatra</label>
+            <select id="popup-yatra" required>
+              <option value="" disabled selected>Select destination</option>
+              <option value="Adi Kailash & Om Parvat Yatra">Adi Kailash & Om Parvat Yatra</option>
+              <option value="Darma Valley Expedition">Darma Valley Expedition</option>
+              <option value="Khaliya Top Trek">Khaliya Top Trek</option>
+            </select>
+          </div>
+          <div class="prebook-form-group">
+            <label for="popup-month">Preferred Month</label>
+            <select id="popup-month" required>
+              <option value="" disabled selected>Select month</option>
+              <option value="May 2026">May 2026</option>
+              <option value="June 2026">June 2026</option>
+              <option value="September 2026">September 2026</option>
+              <option value="October 2026">October 2026</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="prebook-submit-btn">
+            <span>Get My Coupon & Plan</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          
+          <p class="prebook-privacy-note">
+            <i class="fas fa-shield-alt"></i> 100% Secure. We never share your data.
+          </p>
+        </form>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(popupOverlay);
+
+  // Trigger popup display with a 4-second delay
+  setTimeout(() => {
+    if (!localStorage.getItem('sarthii_prebook_popup_dismissed')) {
+      popupOverlay.classList.add('active');
+    }
+  }, 4000);
+
+  // Close actions
+  const closeBtn = popupOverlay.querySelector('.prebook-popup-close-btn');
+  const dismissPopup = () => {
+    popupOverlay.classList.remove('active');
+    localStorage.setItem('sarthii_prebook_popup_dismissed', 'true');
+  };
+
+  closeBtn.addEventListener('click', dismissPopup);
+  popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+      dismissPopup();
+    }
+  });
+
+  // Form Validation & Submission inside Modal
+  const form = popupOverlay.querySelector('.prebook-popup-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const nameInput = document.getElementById('popup-name');
+    const phoneInput = document.getElementById('popup-phone');
+    const yatraSelect = document.getElementById('popup-yatra');
+    const monthSelect = document.getElementById('popup-month');
+    
+    let isValid = true;
+    [nameInput, phoneInput, yatraSelect, monthSelect].forEach(input => {
+      if (!input.value.trim()) {
+        isValid = false;
+        input.style.borderColor = '#ef4444';
+      } else {
+        input.style.borderColor = 'var(--border)';
+      }
+    });
+    
+    if (!isValid) return;
+    
+    const submitBtn = form.querySelector('.prebook-submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Securing Offer...';
+    
+    // Simulate form submission delay
+    setTimeout(() => {
+      localStorage.setItem('sarthii_prebook_popup_dismissed', 'true');
+      
+      const formSide = popupOverlay.querySelector('.prebook-popup-form-side');
+      const nameVal = nameInput.value.trim();
+      const yatraVal = yatraSelect.value;
+      const phoneVal = phoneInput.value.trim();
+      
+      formSide.innerHTML = `
+        <div class="prebook-success-container">
+          <div class="prebook-success-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <h4>Discount Unlocked! 🎉</h4>
+          <p>Thank you, <b>${nameVal}</b>. Your pre-booking discount has been reserved for the <b>${yatraVal}</b>.</p>
+          
+          <div class="prebook-coupon-card">
+            <span>Coupon Code</span>
+            <div class="prebook-coupon-code">PREBOOK2500</div>
+          </div>
+          
+          <p style="font-size: 0.82rem; margin-bottom: 20px; line-height: 1.4;">
+            We will message you on WhatsApp (<b>${phoneVal}</b>) within 24 hours with your custom itinerary.
+          </p>
+          
+          <a href="https://wa.me/918171265958?text=Hi%20Sarthii%20Travels,%20I%20just%20unlocked%20my%20pre-booking%20coupon%20PREBOOK2500%20for%20${encodeURIComponent(yatraVal)}.%20Please%20share%20the%20itinerary!" 
+             target="_blank" 
+             class="prebook-success-action-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
+          </a>
+        </div>
+      `;
+    }, 1500);
+  });
 }

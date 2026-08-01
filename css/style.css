@@ -2346,3 +2346,352 @@ body.nav-open {
     border-left: 1px solid var(--border);
   }
 }
+
+/* ==========================================
+   EXCLUSIVE PRE-BOOKING YATRA DISCOUNT POPUP
+   ========================================== */
+
+.prebook-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prebook-popup-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.prebook-popup-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 850px;
+  width: 90%;
+  min-height: 480px;
+  display: flex;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prebook-popup-overlay.active .prebook-popup-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Image side on Left */
+.prebook-popup-image-side {
+  flex: 1.1;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.8)), url('../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--white);
+  position: relative;
+}
+
+.prebook-popup-badge {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: var(--secondary);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(255, 140, 0, 0.4);
+  animation: pulse-ring 2s infinite;
+}
+
+.prebook-popup-image-side h3 {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.prebook-popup-image-side p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.prebook-popup-benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.prebook-popup-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.prebook-popup-benefit-item i {
+  color: var(--secondary);
+}
+
+/* Form side on Right */
+.prebook-popup-form-side {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: var(--white);
+}
+
+.prebook-popup-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.prebook-popup-close-btn:hover {
+  background-color: var(--light);
+  color: var(--dark);
+  transform: rotate(90deg);
+}
+
+.prebook-popup-form-side h4 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.prebook-popup-form-side h4 span {
+  color: var(--primary);
+}
+
+.prebook-popup-form-side > p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 24px;
+}
+
+.prebook-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prebook-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prebook-form-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dark-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prebook-form-group input,
+.prebook-form-group select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark);
+  outline: none;
+  background-color: var(--light);
+  transition: var(--transition);
+}
+
+.prebook-form-group input:focus,
+.prebook-form-group select:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(0, 128, 255, 0.1);
+}
+
+.prebook-submit-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: var(--white);
+  border: none;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 128, 255, 0.2);
+  transition: var(--transition);
+  margin-top: 5px;
+}
+
+.prebook-submit-btn:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, #0052a3 100%);
+  box-shadow: 0 6px 16px rgba(0, 128, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.prebook-submit-btn:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.prebook-privacy-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Success View Styles */
+.prebook-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+  height: 100%;
+}
+
+.prebook-success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.prebook-success-container h4 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.prebook-success-container p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.prebook-coupon-card {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(255, 140, 0, 0.1) 100%);
+  border: 2px dashed var(--secondary);
+  padding: 15px 30px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.prebook-coupon-card span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.prebook-coupon-code {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 2px;
+}
+
+.prebook-success-action-btn {
+  background-color: #25d366;
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.prebook-success-action-btn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .prebook-popup-card {
+    flex-direction: column;
+    max-width: 450px;
+    min-height: auto;
+  }
+  
+  .prebook-popup-image-side {
+    display: none; /* Hide image on mobile for clean form layout */
+  }
+
+  .prebook-popup-form-side {
+    padding: 30px 24px;
+  }
+}
+
