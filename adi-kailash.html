@@ -919,30 +919,200 @@
     .ak-trust-item span { line-height: 1.4; font-weight: 500; }
     .ak-trust-item strong { color: var(--dark); font-weight: 700; }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== RESPONSIVE — TABLET ===== */
     @media (max-width: 1024px) {
       .ak-layout { grid-template-columns: 1fr; }
       .ak-sidebar { position: static; }
       .ak-price-strip-inner { grid-template-columns: repeat(3, 1fr); }
+      .ak-highlights { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* ===== RESPONSIVE — MOBILE ===== */
     @media (max-width: 768px) {
-      .ak-hero { min-height: 90vh; }
-      .ak-hero h1 { font-size: 2rem; }
-      .ak-hero-subtitle { font-size: 0.95rem; }
+
+      /* --- Hero --- */
+      .ak-hero { min-height: 100svh; }
+      .ak-hero-content { padding: 36px 0 100px; }
+      .ak-hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        line-height: 1.15;
+        margin-bottom: 14px;
+      }
+      .ak-hero-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+      }
+      .ak-hero-subtitle {
+        font-size: 0.92rem;
+        margin-bottom: 20px;
+        line-height: 1.65;
+      }
+      .ak-hero-pills {
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .ak-hero-pill {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        gap: 6px;
+      }
+      .ak-hero-cta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .ak-btn-primary,
+      .ak-btn-outline {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+      .scroll-indicator { display: none; }
+
+      /* --- Pricing Strip --- */
       .ak-price-strip-inner { grid-template-columns: 1fr; }
-      .ak-price-option { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-      .ak-stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .ak-price-option {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 18px 20px;
+      }
+      .ak-price-option:last-child { border-bottom: none; }
+      .ak-price-amount { font-size: 1.3rem; }
+      .ak-price-route { font-size: 0.95rem; }
+
+      /* --- Body --- */
+      .ak-body { padding: 36px 0 100px; }
+
+      /* --- Stats Bar --- */
+      .ak-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 24px;
+      }
+      .ak-stat-item {
+        padding: 16px 12px;
+      }
       .ak-stat-item:nth-child(2n) { border-right: none; }
-      .ak-stat-item:nth-child(3), .ak-stat-item:nth-child(4) { border-top: 1px solid var(--border); }
-      .ak-highlights { grid-template-columns: 1fr; }
-      .ak-tabs { grid-template-columns: 1fr; }
-      .ak-incl-excl { grid-template-columns: 1fr; }
-      .ak-itinerary-header,
-      .ak-timeline-wrap,
-      .ak-tabs { padding-left: 20px; padding-right: 20px; }
-      .ak-about-card { padding: 24px 20px; }
+      .ak-stat-item:nth-child(3),
+      .ak-stat-item:nth-child(4) { border-top: 1px solid var(--border); }
+      .ak-stat-icon { width: 36px; height: 36px; font-size: 1rem; }
+      .ak-stat-value { font-size: 0.95rem; }
+      .ak-stat-key { font-size: 0.68rem; }
+
+      /* --- About Card --- */
+      .ak-about-card {
+        padding: 22px 18px;
+        margin-bottom: 20px;
+      }
+      .ak-about-card p { font-size: 0.92rem; }
+      .ak-section-title { font-size: 1.4rem; }
+
+      /* --- Highlights --- */
+      .ak-highlights {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .ak-highlight-card {
+        padding: 18px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .ak-highlight-card::before { display: none; }
+      .ak-highlight-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        font-size: 1.1rem;
+      }
+      .ak-highlight-card h4 { font-size: 0.88rem; margin-bottom: 3px; }
+      .ak-highlight-card p { font-size: 0.8rem; }
+
+      /* --- Itinerary Section --- */
+      .ak-itinerary-section { margin-bottom: 20px; }
+      .ak-itinerary-header { padding: 22px 18px 0; }
+      .ak-tabs {
+        grid-template-columns: 1fr;
+        padding: 16px 18px 0;
+        gap: 8px;
+        margin: 16px 0 0;
+      }
+      .ak-tab-btn {
+        padding: 11px 10px;
+        font-size: 0.8rem;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ak-tab-btn .tab-days {
+        font-size: 0.68rem;
+        display: inline;
+        margin-top: 0;
+      }
+      .ak-timeline-wrap { padding: 22px 18px 26px; }
+      .ak-timeline::before { left: 17px; }
+      .ak-day { gap: 16px; margin-bottom: 24px; }
+      .ak-day-badge {
+        width: 36px;
+        height: 36px;
+        font-size: 0.65rem;
+        border: 2px solid #fff;
+      }
+      .ak-day-title { font-size: 0.88rem; margin-bottom: 6px; }
+      .ak-day-desc { font-size: 0.85rem; line-height: 1.65; }
+
+      /* --- Inclusions / Exclusions --- */
+      .ak-incl-excl {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+      .ak-incl-card, .ak-excl-card { padding: 20px 18px; }
+      .ak-incl-card h3, .ak-excl-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+      }
+      .ak-incl-excl-list li { font-size: 0.84rem; }
+
+      /* --- Sidebar Price Card --- */
+      .ak-price-card-header { padding: 18px 20px; }
+      .ak-price-options { padding: 14px 16px; gap: 10px; }
+      .ak-price-opt { padding: 12px 14px; }
+      .ak-price-opt-name { font-size: 0.85rem; }
+      .ak-price-opt-dur { font-size: 0.74rem; }
+      .ak-price-opt-amt .amount { font-size: 1.1rem; }
+
+      /* --- Inquiry Form --- */
+      .ak-inquiry-card-header { padding: 18px 20px; }
+      .ak-inquiry-form { padding: 18px 18px; gap: 12px; }
+      .ak-form-group input,
+      .ak-form-group select,
+      .ak-form-group textarea {
+        padding: 12px 14px;
+        font-size: 1rem; /* prevents iOS zoom-in on focus */
+      }
+      .ak-submit-btn { padding: 14px; font-size: 0.95rem; }
+
+      /* --- Trust Bar --- */
+      .ak-trust-bar { padding: 14px 16px; gap: 10px; }
+      .ak-trust-item { font-size: 0.82rem; gap: 10px; }
+      .ak-trust-item i { width: 28px; height: 28px; font-size: 0.8rem; }
     }
+
+    /* ===== RESPONSIVE — SMALL PHONES (≤ 380px) ===== */
+    @media (max-width: 380px) {
+      .ak-hero h1 { font-size: 1.65rem; }
+      .ak-hero-pills { gap: 6px; }
+      .ak-hero-pill { padding: 7px 11px; font-size: 0.74rem; }
+      .ak-stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .ak-price-strip-inner { grid-template-columns: 1fr; }
+      .ak-section-title { font-size: 1.25rem; }
+    }
+
   </style>
 </head>
 <body>
